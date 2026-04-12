@@ -1,0 +1,55 @@
+# ===== Literature Search =====
+pyalex>=0.10.0
+arxiv>=2.0.0
+
+# ===== HTTP & API =====
+requests>=2.31.0
+httpx>=0.24.0
+tenacity>=8.2.0
+backoff>=2.2.0
+fake-useragent>=1.4.0
+
+# ===== Tokenization & Text Processing =====
+tiktoken>=0.5.0
+tabulate>=0.9.0
+
+# ===== JSON & Schema Processing =====
+json-repair>=0.25.0
+jsonschema>=4.20.0
+genson>=1.2.0
+
+# ===== Graph Processing =====
+igraph>=0.11.0
+
+# ===== Image Processing =====
+Pillow>=10.0.0
+
+# ===== Async & Concurrency =====
+asyncio-atexit>=1.0.0
+
+# ===== CLI & Logging =====
+rich>=13.0.0
+pyyaml>=6.0
+humanize>=4.6.0
+psutil>=5.9.0
+
+# ===== Code Formatting =====
+black>=23.0.0
+
+# ===== Utility Libraries =====
+funcy>=2.0.0
+coolname>=2.2.0
+shutup>=0.2.0
+
+# ===== PyTorch (for GPU detection) =====
+torch>=2.0.0
+
+# ===== Google Auth (for some API integrations) =====
+google-auth>=2.23.0
+
+# ===== Medical Imaging Framework (project-specific) =====
+# camylanet  # Uncomment if publishing to PyPI
+
+# ===== Development Tools =====
+pytest>=7.0.0
+flake8>=6.0.0

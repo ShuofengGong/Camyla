@@ -1,0 +1,44 @@
+{
+  "dataset": {
+    "name": "905",
+    "full_name": "An Annotated Multi-Site and Multi-Contrast Magnetic Resonance Imaging Dataset for the study of the Human Tongue Musculature",
+    "abbreviation": "AMSMC-HTM",
+    "description": "Tongue muscle segmentation from T1-weighted MRI scans",
+    "dataset_id": 905,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "oral",
+    "target_structure": "Genioglossus, Geniohyoid, Mylohyoid, Anterior Digastric muscles",
+    "labels": {
+      "background": 0,
+      "Genioglossus": 1,
+      "Geniohyoid": 2,
+      "Mylohyoid": 3,
+      "Anterior Digastric": 4
+    },
+    "num_classes": 5,
+    "num_samples": 24,
+    "num_images": 24,
+    "patch_size": [
+      160,
+      112,
+      128
+    ],
+    "spacing": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1, 1],
+    "file_format": ".nii.gz",
+    "acquisition_info": "3T GE MR750 scanner with 32-channel head coil, coronal T1-weighted MPRAGE sequence, 1 mm³ isotropic resolution (TE=2.3 ms, TR=6.2 ms, TI=500 ms, FA=12°, matrix=256×256, slices=204)",
+    "annotation_info": "Semi-automated segmentation using active learning with DynUNet model, followed by manual correction and smoothing by medical imaging experts with 6-10 years experience",
+    "data_source": "Single-center study from Brain and Mind Centre (BMC) Motor Neuron Disease neuroimaging database",
+    "detailed_description": "This dataset is a subset of the annotated Multi-Site and Multi-Contrast MRI Dataset for Human Tongue Musculature, specifically comprising the BMC study cohort. It includes 24 T1-weighted MRI scans from healthy control participants with manually corrected segmentations of four extrinsic tongue muscles: Genioglossus, Geniohyoid, Mylohyoid, and Anterior Digastric. All images were acquired using a 3T GE MR750 scanner with a 32-channel head coil and 1 mm³ isotropic MPRAGE sequence. The segmentations were generated through a semi-automated pipeline combining active learning, test-time adaptation, and joint label fusion, followed by expert manual correction and 1 mm Gaussian smoothing.",
+    "clinical_relevance": "Accurate segmentation of tongue musculature is important for studying speech production, swallowing disorders, and neurodegenerative diseases like amyotrophic lateral sclerosis (ALS) where tongue function is affected. These segmentations enable quantitative analysis of muscle morphology and volume changes in health and disease.",
+    "reference": null,
+    "license": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "name": "908",
+    "full_name": "BUS-UCLM",
+    "abbreviation": "BUS-UCLM",
+    "description": "Breast lesion segmentation from ultrasound images",
+    "dataset_id": 908,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "Ultrasound",
+    "image_dimension": "2D",
+    "anatomical_region": "thorax",
+    "target_structure": "breast lesion",
+    "labels": {
+      "background": 0,
+      "lesion": 1
+    },
+    "num_classes": 2,
+    "num_samples": 670,
+    "num_images": 670,
+    "patch_size": [
+      640,
+      896
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Siemens ACUSON S2000 Ultrasound System with 18L6 HD probe, standard beamforming method, pixel resolution typically (0.0639205, 0.0639205) mm, image dimensions 768 × 1024 pixels",
+    "annotation_info": "Manual segmentation by two expert radiologists with consensus review, lesion malignancy confirmed through biopsy",
+    "data_source": "Single institution (Ciudad Real General University Hospital, Spain)",
+    "detailed_description": "The BUS-UCLM dataset is a breast ultrasound lesion segmentation dataset comprising 683 images from 38 patients. For our study, we use a subset of 670 images with segmentation masks converted to binary labels (lesion vs. background). Images were acquired using a Siemens ACUSON S2000 system with an 18L6 HD probe, with typical resolution of (0.0639205, 0.0639205) mm and dimensions of 768 × 1024 pixels. The dataset includes both benign and malignant lesions, with all lesions in each image annotated regardless of multiplicity. Manual segmentation masks were created by expert radiologists and validated through biopsy confirmation.",
+    "clinical_relevance": "Accurate segmentation of breast lesions in ultrasound images is essential for computer-aided diagnosis systems, enabling precise measurement of lesion size, shape, and boundaries, which are critical for differentiating between benign and malignant tumors and guiding clinical decision-making.",
+    "reference": null,
+    "license": null
+  }
+}

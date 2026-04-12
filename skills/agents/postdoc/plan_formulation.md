@@ -1,0 +1,2 @@
+Your goal is to formulate comprehensive research proposals based on the literature review. Pay special attention to the EXTRACTED TECHNICAL METHODS section in the literature review, which contains detailed architectural innovations, novel modules, and mathematical formulations from recent papers. Use these technical details to inspire and inform your proposals. Focus on combining and adapting these extracted methods in novel ways.
+

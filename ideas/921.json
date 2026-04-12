@@ -1,0 +1,44 @@
+{
+  "dataset": {
+    "name": "921",
+    "full_name": "MU-Glioma-Post",
+    "abbreviation": "MU-Glioma-Post",
+    "description": "Medical imaging segmentation task for MU-Glioma-Post",
+    "dataset_id": 921,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "Unknown",
+    "target_structure": "label1, label2, label3, label4",
+    "labels": {
+      "background": 0,
+      "label1": 1,
+      "label2": 2,
+      "label3": 3,
+      "label4": 4
+    },
+    "num_classes": 5,
+    "num_samples": 594,
+    "num_images": 594,
+    "patch_size": [
+      96,
+      160,
+      160
+    ],
+    "spacing": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1.0, 1.0, 1.0],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Standard clinical imaging protocol",
+    "annotation_info": "Expert manual segmentation",
+    "data_source": "Clinical dataset",
+    "detailed_description": "This dataset comprises 594 MRI scans for label1, label2, label3, label4 segmentation. The annotations include: label1, label2, label3, label4.",
+    "clinical_relevance": "Accurate structure segmentation is important for clinical diagnosis and treatment planning.",
+    "reference": null,
+    "license": null
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "924",
+    "full_name": "PediMS",
+    "abbreviation": "PediMS",
+    "description": "Pediatric multiple sclerosis lesion segmentation from FLAIR MRI scans",
+    "dataset_id": 924,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "brain",
+    "target_structure": "multiple sclerosis lesions",
+    "labels": {
+      "background": 0,
+      "lesion": 1
+    },
+    "num_classes": 2,
+    "num_samples": 28,
+    "num_images": 28,
+    "patch_size": [
+      32,
+      256,
+      224
+    ],
+    "spacing": [
+      3.8999998569488525,
+      0.75,
+      0.75
+    ],
+    "median_spacing": [3.9000000953674316, 0.75, 0.75],
+    "file_format": ".nii.gz",
+    "acquisition_info": "3T Siemens Magnetom Skyra scanner, FLAIR sequence (TR=9000 ms, TE=81 ms, TI=2500 ms, FA=150°, Slice Thickness=3 mm, voxel size=0.75×0.75×3.9 mm)",
+    "annotation_info": "Manual segmentation by a junior rater and validated by two senior experts (pediatric neurologist and radiologist) using JIM 9.0 software, primarily on FLAIR sequences with T1 and T2 reference for accuracy",
+    "data_source": "Single institution (Clinical Pediatric Hospital Sibiu, Romania)",
+    "detailed_description": "The PediMS dataset is the first publicly available pediatric multiple sclerosis lesion segmentation dataset, containing longitudinal MRI scans from 9 pediatric patients with relapsing-remitting MS. The subset used in this study comprises 28 FLAIR MRI scans focusing exclusively on brain lesion segmentation. All images were acquired on a 3T Siemens Magnetom Skyra scanner and underwent preprocessing including skull stripping and N4 bias field correction. Manual lesion annotations were created by clinical experts and validated through a multi-rater review process.",
+    "clinical_relevance": "Accurate segmentation of MS lesions in pediatric patients is crucial for monitoring disease progression and treatment response, as pediatric MS differs from adult MS in lesion characteristics and clinical presentation, with more frequent relapses and lesions often located in cerebellum and brainstem.",
+    "reference": null,
+    "license": null
+  }
+}

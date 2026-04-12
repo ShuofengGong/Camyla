@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "916",
+    "full_name": "High-Resolution Ultrasound Data for AI-Based Segmentation in Mouse Brain Tumor",
+    "abbreviation": "HRUS-MBT",
+    "description": "GL261 mouse brain tumor segmentation from high-resolution ultrasound images",
+    "dataset_id": 916,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "Ultrasound",
+    "image_dimension": "3D",
+    "anatomical_region": "brain",
+    "target_structure": "brain tumor",
+    "labels": {
+      "background": 0,
+      "tumor": 1
+    },
+    "num_classes": 2,
+    "num_samples": 34,
+    "num_images": 34,
+    "patch_size": [
+      32,
+      256,
+      256
+    ],
+    "spacing": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1, 1],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Custom-built 64-element phased array ultrasound system with 30 MHz center frequency, axial resolution 40 µm, lateral resolution 130 µm, depth range 2-15 mm, 128-line angles, 64° sector range",
+    "annotation_info": "Manual pixel-wise segmentation by five trained students, with verification and refinement by two experienced professionals. Annotations were validated against MRI and histology when available. Final ground truth derived from averaged segmentations with expert refinement.",
+    "data_source": "Single institution study from Dalhousie University",
+    "detailed_description": "This dataset contains high-resolution ultrasound images of GL261 glioma tumors in mouse brains, specifically developed for AI-based segmentation tasks. The dataset includes 1,856 annotated ultrasound images (1,448 tumor images and 408 non-tumor images) from both in-vivo and ex-vivo experiments. Images were acquired using a custom-built 64-element phased array ultrasound system operating at 30 MHz center frequency, providing axial and lateral resolutions of 40 µm and 130 µm respectively. Binary segmentation masks delineate tumor regions from background tissue, with annotations validated against corresponding MRI and histological sections when available.",
+    "clinical_relevance": "Accurate tumor boundary delineation is essential for precise tumor ablation using techniques like histotripsy, and for improving surgical outcomes in glioblastoma treatment by enabling real-time visualization of tumor margins during procedures.",
+    "reference": null,
+    "license": null
+  }
+}

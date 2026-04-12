@@ -1,0 +1,48 @@
+\documentclass[a4paper,fleqn]{cas-sc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage{xspace}
+\usepackage[authoryear,longnamesfirst]{natbib}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+%%%%%%%%%TITLE%%%%%%%%%
+\title [mode = title]{Title HERE}
+%%%%%%%%%TITLE%%%%%%%%%
+
+\author{Anonymous Author}
+\affiliation{organization={Anonymous Organization}}
+
+\begin{abstract}
+%%%%%%%%%ABSTRACT%%%%%%%%%
+ABSTRACT HERE
+%%%%%%%%%ABSTRACT%%%%%%%%%
+\end{abstract}
+
+% Keywords
+% Each keyword is seperated by \sep
+\begin{keywords}
+\end{keywords}
+
+\maketitle
+
+\bibliographystyle{cas-model2-names}
+\bibliography{references}
+
+\end{document}
+

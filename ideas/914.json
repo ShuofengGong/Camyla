@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "name": "914",
+    "full_name": "FOVEA",
+    "abbreviation": "FOVEA",
+    "description": "Optic disc segmentation from retinal fundus images",
+    "dataset_id": 914,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "Fundus",
+    "image_dimension": "2D",
+    "anatomical_region": "eye",
+    "target_structure": "optic disc",
+    "labels": {
+      "background": 0,
+      "OpticDisc": 1
+    },
+    "num_classes": 2,
+    "num_samples": 40,
+    "num_images": 40,
+    "patch_size": [
+      896,
+      1792
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Preoperative images acquired with Topcon 3D OCT-1000 fundus camera after pupillary dilation with 1.0% tropicamide and 2.5% phenylephrine. Intraoperative images from Zeiss Lumera 700 ophthalmic microscope with RESIGHT fundus viewing system and 128D lens.",
+    "annotation_info": "Manual annotation by two independent clinical research fellows using Apple Pencil on iPad Pro. Annotations performed on green channel images following specific protocol for optic disc delineation. Raw annotations converted to binary masks via thresholding and skeletonization.",
+    "data_source": "Single institution (Moorfields Eye Hospital, London, UK)",
+    "detailed_description": "The FOVEA dataset contains preoperative and intraoperative retinal fundus images from 40 patients undergoing vitreoretinal surgery. For the segmentation task described in dataset.json, we utilize only the preoperative RGB color fundus images (40 total) with optic disc annotations. Images were acquired using a Topcon 3D OCT-1000 fundus camera after pharmacological pupillary dilation. The optic disc was manually segmented by two independent clinical experts following a standardized protocol that defined the optic disc as the round or ovoid structure nasal to the macula from which retinal vessels emerge.",
+    "clinical_relevance": "Accurate optic disc segmentation is important for surgical planning and navigation during vitreoretinal procedures, as the optic disc serves as a key anatomical landmark for orientation and can help in registering preoperative imaging with intraoperative views.",
+    "reference": null,
+    "license": null
+  }
+}

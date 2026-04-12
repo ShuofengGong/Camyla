@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "name": "911",
+    "full_name": "DenPAR",
+    "abbreviation": "DenPAR",
+    "description": "Tooth segmentation from intra-oral periapical radiographs",
+    "dataset_id": 911,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "X-ray",
+    "image_dimension": "2D",
+    "anatomical_region": "oral",
+    "target_structure": "tooth",
+    "labels": {
+      "background": 0,
+      "tooth": 1
+    },
+    "num_classes": 2,
+    "num_samples": 800,
+    "num_images": 800,
+    "patch_size": [
+      896,
+      1280
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Intra-oral periapical (IOPA) radiographs acquired for routine dental treatment and diagnosis. Images are in JPG format with variable resolutions (average ~1060x950 pixels, range 549x685 to 1542x1537 pixels).",
+    "annotation_info": "Manual segmentation by two experienced specialists (MD in Restorative Dentistry) using LabelBox annotation tool, with standardized diagnostic criteria and consensus review. Annotations were blindly reviewed and approved by two additional experienced specialists (MD in Oral Surgery, and MD in Restorative Dentistry).",
+    "data_source": "Single institution (Radiology Unit of the Dental Hospital Peradeniya, Sri Lanka)",
+    "detailed_description": "The DenPAR dataset consists of 1000 intra-oral periapical (IOPA) radiographs with detailed annotations for tooth segmentation. This subset focuses specifically on binary tooth segmentation, where teeth are segmented from the background. The radiographs were acquired from 440 male and 560 female patients aged 9-81 years during routine dental care. Images show variable resolutions with an average of approximately 1060x950 pixels. Manual segmentation masks were created by dental specialists and validated through consensus review.",
+    "clinical_relevance": "Accurate tooth segmentation is fundamental for automated dental analysis, enabling computer-aided diagnosis, treatment planning, and monitoring of dental conditions such as caries, periodontal disease, and tooth alignment.",
+    "reference": "DenPAR: A Dataset for Periodontal Disease Detection and Classification",
+    "license": null
+  }
+}

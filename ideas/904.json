@@ -1,0 +1,43 @@
+{
+  "dataset": {
+    "name": "904",
+    "full_name": "A longitudinal MRI dataset of brain metastases with tumor segmentations, clinical and radiomic data",
+    "abbreviation": "LMD-BM",
+    "description": "Brain metastasis segmentation from multi-sequence MRI scans",
+    "dataset_id": 904,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "brain",
+    "target_structure": "brain metastases",
+    "labels": {
+      "background": 0,
+      "Necrosis": 1,
+      "Edema": 2,
+      "EnhancingTumor": 3
+    },
+    "num_classes": 4,
+    "num_samples": 44,
+    "num_images": 44,
+    "patch_size": [
+      96,
+      160,
+      160
+    ],
+    "spacing": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1.0, 1.0, 1.0],
+    "file_format": ".nii.gz",
+    "acquisition_info": "1.5T and 3T MRI scanners (Philips, Siemens, Toshiba) with T1-weighted, T2-weighted, post-contrast T1-weighted (T1c), and FLAIR sequences. Contrast agent: Gadovist (0.1 mmol/kg). Slice thickness: 0.5-5.0mm, slice spacing: 0.5-6.5mm.",
+    "annotation_info": "Initial segmentation using automated methods (DeepBraTumIA, nnU-Net) and semi-automated software (Imalytics Preclinical), followed by manual correction and refinement by an expert neuroradiologist with over 10 years of experience.",
+    "data_source": "Multi-center study from 6 diagnostic centers in Cyprus, part of the PROTEAS project and aligned with BraTS standards.",
+    "detailed_description": "This dataset is a subset of the PROTEAS longitudinal brain metastasis dataset, containing 44 patient cases with multi-sequence MRI scans. The imaging includes four standard sequences: FLAIR, T1-weighted, post-contrast T1-weighted (T1c), and T2-weighted. The segmentation task focuses on delineating three key tumor subregions of brain metastases: necrotic core, peritumoral edema, and enhancing tumor. All images were preprocessed and registered to the BraTS spatial framework to ensure standardization. The annotations were generated through a combination of automated and semi-automated methods with final expert neuroradiologist review.",
+    "clinical_relevance": "Accurate segmentation of brain metastasis subregions is crucial for treatment planning, particularly for stereotactic radiosurgery, and for monitoring treatment response during follow-up. Precise delineation of enhancing tumor, edema, and necrotic regions enables better assessment of tumor burden and therapeutic efficacy.",
+    "reference": null,
+    "license": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "dataset": {
+    "name": "900",
+    "full_name": "A comprehensive dataset of germinoma on MRI_CT with clinical and radiomic data",
+    "abbreviation": "GDMRI-CT",
+    "description": "Germinoma segmentation from multi-modality MRI",
+    "dataset_id": 900,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "brain",
+    "target_structure": "germinoma",
+    "labels": {
+      "background": 0,
+      "germinoma": 1
+    },
+    "num_classes": 2,
+    "num_samples": 50,
+    "num_images": 50,
+    "patch_size": [
+      16,
+      320,
+      320
+    ],
+    "spacing": [
+      6.0,
+      0.4513939321041107,
+      0.4513939321041107
+    ],
+    "median_spacing": [
+      7.0,
+      0.4513939321041107,
+      0.4513939321041107
+    ],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Multi-modality MRI with 4 channels: T2WI, T2-FLAIR, T1WI, T1-CE. All modalities resampled to T2 space. 50 training cases from patients with pathologically confirmed intracranial germinomas.",
+    "annotation_info": "Semi-automatic segmentation using ITK-SNAP software with manual refinement by two radiologists (8 and 10 years experience). Segmentations were checked and revised layer by layer, focusing on the enhancing tumor component while avoiding hemorrhage, necrosis, and cystic lesions.",
+    "data_source": "Multi-institutional study from two hospitals on the same campus: First Affiliated Hospital of Guangxi Medical University and Guangxi Medical University Cancer Hospital",
+    "detailed_description": "The dataset comprises 50 multi-modality MRI scans (T2WI, T2-FLAIR, T1WI, T1-CE) from patients with pathologically confirmed intracranial germinomas, resampled to T2 space. Germinoma is the most common histological subtype of intracranial germ cell tumors, predominantly occurring in adolescents. Manual segmentation masks were created by experienced radiologists using semi-automatic methods with manual refinement, focusing on the enhancing tumor component.",
+    "clinical_relevance": "Accurate germinoma segmentation is crucial for treatment planning since germinomas are highly sensitive to chemo-radiotherapy and typically do not require surgical resection. Precise tumor delineation helps avoid unnecessary neurosurgical procedures and enables optimal radiotherapy targeting.",
+    "reference": null,
+    "license": null
+  }
+}

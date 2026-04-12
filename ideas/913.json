@@ -1,0 +1,44 @@
+{
+  "dataset": {
+    "name": "913",
+    "full_name": "Endoscapes2023",
+    "abbreviation": "Endoscapes2023",
+    "description": "Surgical scene segmentation in laparoscopic cholecystectomy videos",
+    "dataset_id": 913,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "Endoscopy",
+    "image_dimension": "2D",
+    "anatomical_region": "abdomen",
+    "target_structure": "cystic plate, calot triangle, cystic artery, cystic duct, gallbladder, surgical tools",
+    "labels": {
+      "background": 0,
+      "cystic_plate": 1,
+      "calot_triangle": 2,
+      "cystic_artery": 3,
+      "cystic_duct": 4,
+      "gallbladder": 5,
+      "tool": 6
+    },
+    "num_classes": 7,
+    "num_samples": 343,
+    "num_images": 343,
+    "patch_size": [
+      512,
+      896
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Laparoscopic endoscopic videos recorded at 30 FPS, re-encoded at 480×854 resolution with H.264 codec. Frames extracted at 1 frame per second from the critical view of safety assessment segment of procedures.",
+    "annotation_info": "Manual polygon-based semantic segmentation by 5 trained annotators (3 surgeons and 2 computer scientists with domain expertise). All masks were reviewed by at least one surgeon and revised iteratively until convergence using LabelMe software.",
+    "data_source": "Endoscapes2023 dataset (specifically the Endoscapes-Seg50 subset), single institution (Institute of Image-Guided Surgery, IHU-Strasbourg, France)",
+    "detailed_description": "This dataset is derived from the Endoscapes2023 surgical scene segmentation subset for laparoscopic cholecystectomy. It consists of 343 RGB endoscopic frames extracted from 201 surgical videos, focusing on the critical view of safety assessment phase. The segmentation task involves 7 classes: background, cystic plate, calot triangle (hepatocystic triangle dissection), cystic artery, cystic duct, gallbladder, and surgical tools. Images were acquired during standard laparoscopic cholecystectomy procedures and annotated by a team of surgeons and computer scientists following a rigorous protocol with iterative review.",
+    "clinical_relevance": "Accurate segmentation of hepatocystic anatomy and surgical tools is essential for automated assessment of the Critical View of Safety, a key visual checkpoint to prevent bile duct injuries during laparoscopic cholecystectomy.",
+    "reference": null,
+    "license": null
+  }
+}

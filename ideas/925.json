@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "925",
+    "full_name": "Primary Liver Cancer CECT Imaging Dataset",
+    "abbreviation": "PLC-CECT",
+    "description": "Liver lesion segmentation from contrast-enhanced CT scans",
+    "dataset_id": 925,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "CT",
+    "image_dimension": "3D",
+    "anatomical_region": "abdomen",
+    "target_structure": "lesion",
+    "labels": {
+      "background": 0,
+      "lesion": 1
+    },
+    "num_classes": 2,
+    "num_samples": 278,
+    "num_images": 278,
+    "patch_size": [
+      56,
+      224,
+      192
+    ],
+    "spacing": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1.0, 1.0, 1.0],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Multi-phase contrast-enhanced CT using Canon 64-slice Aquilion PRIME TSX-303A and Philips 128-slice Brilliance iCT scanners. Imaging parameters: tube voltage 120 kV, matrix size 512×512, slice thickness 0.8 mm, rotation time 0.5 ms. Iohexol contrast agent administered at 3 mL/s. Four phases acquired: Plain, Arterial, Venous, and Delayed.",
+    "annotation_info": "Lesion regions were independently annotated by two clinicians using ITK-SNAP software. Discrepancies were reviewed jointly until consensus was reached. Inter-observer Dice coefficient was 0.7586 (mean).",
+    "data_source": "Single institution (Chongqing Yubei District People's Hospital) retrospective clinical data",
+    "detailed_description": "This dataset comprises 278 contrast-enhanced CT (CECT) scans from patients with primary liver cancer (hepatocellular carcinoma, intrahepatic cholangiocarcinoma, and combined hepatocellular-cholangiocarcinoma). All scans are 3D volumes in NIFTI format with dimensions of 512×512×n (variable slice count). The dataset includes four imaging phases (Plain, Arterial, Venous, Delayed) for each patient. Manual segmentation masks for liver lesions were created by expert clinicians through a rigorous annotation protocol with inter-observer validation. The dataset contains 50,560 annotated lesion slices with a median lesion volume of 75.37 cm³.",
+    "clinical_relevance": "Accurate liver lesion segmentation is crucial for tumor volume assessment, treatment planning, and monitoring treatment response in primary liver cancer, which has high global incidence and mortality rates.",
+    "reference": null,
+    "license": null
+  }
+}

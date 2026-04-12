@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "931",
+    "full_name": "TRUSTED",
+    "abbreviation": "TRUSTED",
+    "description": "Kidney segmentation from 3D transabdominal ultrasound images",
+    "dataset_id": 931,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "Ultrasound",
+    "image_dimension": "3D",
+    "anatomical_region": "abdomen",
+    "target_structure": "Kidney",
+    "labels": {
+      "background": 0,
+      "Kidney": 1
+    },
+    "num_classes": 2,
+    "num_samples": 59,
+    "num_images": 59,
+    "patch_size": [
+      112,
+      128,
+      160
+    ],
+    "spacing": [
+      0.30000001192092896,
+      0.30000001192092896,
+      0.30000001192092896
+    ],
+    "median_spacing": [0.30000001192092896, 0.30000001192092896, 0.30000001192092896],
+    "file_format": ".nii.gz",
+    "acquisition_info": "3D transabdominal ultrasound using Siemens Acuson S3000 7CF1 HD probe (mechanically driven), isotropic voxel spacing of 0.3 mm, resolution 760 × 540 × (739 ± 55.15) voxels",
+    "annotation_info": "Manual segmentation by two independent radiographers (10 and 11 years experience) using 3D Slicer, with gold-standard segmentations generated using STAPLE algorithm and validated by a senior radiologist",
+    "data_source": "Single-center study (Nouvel Hôpital Civil of Strasbourg, France) - TRUSTED dataset",
+    "detailed_description": "The TRUSTED dataset subset used in this study comprises 59 3D transabdominal ultrasound images of kidneys from 48 patients. This represents a subset of the full TRUSTED dataset, which originally included paired CT and US images. The ultrasound images were acquired using a Siemens Acuson S3000 7CF1 HD 3D probe with isotropic voxel spacing of 0.3 mm. Only images where the kidney was fully contained within the field-of-view and could be reliably segmented were included, excluding cases with severe artifacts. The segmentation task focuses on delineating the kidney parenchyma.",
+    "clinical_relevance": "Accurate kidney segmentation in ultrasound is important for organ volume measurement, disease monitoring (such as chronic kidney disease), and for inter-modal image registration applications in image-guided surgery and robotic navigation systems.",
+    "reference": null,
+    "license": null
+  }
+}

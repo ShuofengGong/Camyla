@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "name": "926",
+    "full_name": "PW-BALFC",
+    "abbreviation": "PW-BALFC",
+    "description": "Bronchoalveolar lavage fluid cell segmentation from microscopic images",
+    "dataset_id": 926,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "Microscopy",
+    "image_dimension": "2D",
+    "anatomical_region": "thorax",
+    "target_structure": "target",
+    "labels": {
+      "background": 0,
+      "target": 1
+    },
+    "num_classes": 2,
+    "num_samples": 2105,
+    "num_images": 2105,
+    "patch_size": [
+      640,
+      896
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "OLYMPUS CX31 microscope with 100× objective lens (NA=0.9), OLY Cam DP1000 camera, pixel dimensions 4912×3684, pixel size 1.85µm×1.85µm, Diff-Quick or Gram staining",
+    "annotation_info": "Two-stage collaborative annotation: initial contour labeling by two experienced annotators using Label Studio, followed by review and correction by two senior clinical cytologists, repeated twice until consensus",
+    "data_source": "Single institution (Chinese PLA General Hospital) clinical data",
+    "detailed_description": "The PW-BALFC dataset contains 2,105 high-resolution microscopic images of bronchoalveolar lavage fluid (BALF) cells from 558 patients. Images were acquired using an OLYMPUS CX31 microscope with 100× magnification and OLY Cam DP1000 camera, with pixel dimensions of 4912×3684 and pixel size of 1.85µm×1.85µm. The dataset provides pixel-level instance annotations for cell segmentation. All samples were collected from patients undergoing bedside bronchoscopy between 2018-2024 and were stained using Diff-Quick or Gram staining protocols.",
+    "clinical_relevance": "Automated segmentation of BALF cells enables rapid screening of qualified samples and morphological analysis, which is crucial for diagnosing pulmonary infections, interstitial lung diseases, and monitoring therapeutic responses in respiratory disorders.",
+    "reference": null,
+    "license": null
+  }
+}

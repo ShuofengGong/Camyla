@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "902",
+    "full_name": "A dataset of primary nasopharyngeal carcinoma MRI with multi-modalities segmentation",
+    "abbreviation": "PNPC",
+    "description": "Primary nasopharyngeal carcinoma tumor segmentation from T2-weighted MRI",
+    "dataset_id": 902,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "head_neck",
+    "target_structure": "nasopharyngeal carcinoma tumor (GTVp)",
+    "labels": {
+      "background": 0,
+      "tumor": 1
+    },
+    "num_classes": 2,
+    "num_samples": 277,
+    "num_images": 277,
+    "patch_size": [
+      20,
+      320,
+      256
+    ],
+    "spacing": [
+      5.5,
+      0.4296875,
+      0.4296875
+    ],
+    "median_spacing": [5.5, 0.4296875, 0.4296875],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Multiple 1.5T and 3.0T MRI scanners (GE Discovery MR750w, Philips Achieva, Siemens MAGNETOM, etc.) with T2-weighted sequences. Median parameters: echo time 12.0 ms, repetition time 570.88 ms, slice thickness 5.0 mm, pixel spacing 0.43 mm, field of view 220×220 mm². No contrast agent used in this subset.",
+    "annotation_info": "Manual segmentation by two experienced diagnostic radiologists (each with >10 years experience) using ITK-SNAP software. Independent layer-by-layer annotation of tumor boundaries in axial plane, with cross-referencing between sequences for difficult boundaries.",
+    "data_source": "Single institution (The First People's Hospital of Foshan, China)",
+    "detailed_description": "This dataset is a subset of the primary nasopharyngeal carcinoma (NPC) MRI dataset, containing T2-weighted MRI scans from 277 patients with histopathologically confirmed primary NPC. The target structure for segmentation is the primary gross tumor volume (GTVp) of nasopharyngeal carcinoma, which is clinically critical for radiotherapy planning. All images were acquired using standardized protocols across multiple 1.5T and 3.0T MRI scanners. Manual segmentation masks were created by experienced radiologists following a rigorous annotation protocol, with high inter-rater reliability demonstrated (Dice coefficients >0.85).",
+    "clinical_relevance": "Accurate delineation of nasopharyngeal carcinoma tumor volume is essential for intensity-modulated radiation therapy (IMRT) planning, enabling precise tumor targeting while minimizing radiation exposure to surrounding critical structures in the head and neck region.",
+    "reference": null,
+    "license": null
+  }
+}

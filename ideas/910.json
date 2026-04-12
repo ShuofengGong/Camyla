@@ -1,0 +1,42 @@
+{
+  "dataset": {
+    "name": "910",
+    "full_name": "CPAISD",
+    "abbreviation": "CPAISD",
+    "description": "Ischemic core and penumbra segmentation from Non-Contrast CT scans of hyperacute stroke patients",
+    "dataset_id": 910,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "CT",
+    "image_dimension": "3D",
+    "anatomical_region": "brain",
+    "target_structure": "ischemic core and penumbra",
+    "labels": {
+      "background": 0,
+      "label1": 1,
+      "label2": 2
+    },
+    "num_classes": 3,
+    "num_samples": 112,
+    "num_images": 112,
+    "patch_size": [
+      40,
+      224,
+      192
+    ],
+    "spacing": [
+      1.7000000476837158,
+      0.42382800579071045,
+      0.42382800579071045
+    ],
+    "median_spacing": [1.7000000476837158, 0.42382800579071045, 0.42382800579071045],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Non-Contrast CT scans acquired on GE Revolution EVO or Siemens Somatom Emotion scanners. Parameters: 120-130 kV, slice thickness 1.25-2 mm, field of view 193×193 to 320×320 mm. No contrast agent used.",
+    "annotation_info": "Manual segmentation by a radiologist with 10 years of experience using Horos software, comparing NCCT with CT perfusion maps to delineate penumbra and core regions guided by anatomical landmarks.",
+    "data_source": "Single institution (Hospital 40 of the St. Petersburg Resort district)",
+    "detailed_description": "The Core-Penumbra hyperAcute Ischemic Stroke Dataset (CPAISD) comprises 112 Non-Contrast CT (NCCT) scans of patients in the hyperacute phase of ischemic stroke (within 24 hours of symptom onset). The dataset includes manually annotated segmentation masks for ischemic core and penumbra regions, which are critical for early stroke assessment. Scans were acquired on GE Revolution EVO or Siemens Somatom Emotion scanners with slice thicknesses of 1.25-2 mm. The dataset focuses on the challenging hyperacute phase where NCCT scans typically show minimal or no visible ischemic changes.",
+    "clinical_relevance": "Accurate segmentation of ischemic core and penumbra from NCCT scans enables faster stroke diagnosis and treatment planning, which is critical in time-sensitive hyperacute stroke management, especially in settings where advanced imaging like CT perfusion or MRI is unavailable.",
+    "reference": null,
+    "license": null
+  }
+}

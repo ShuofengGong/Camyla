@@ -1,0 +1,45 @@
+# --- User-defined ignores ---
+.venv/
+util/
+others/
+logs/
+experiments/
+openhands_example/
+baseline_runner/
+evaluation/
+explogs/
+explogs2/
+docs/
+explogs3/
+scripts/
+.agent/
+pdf/
+vis/
+
+# --- Common Python ignores (strongly recommended) ---
+# Bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# Common virtualenv directory names (in case you rename yours later)
+env/
+venv/
+ENV/
+
+# Env files (prevent leaking secrets)
+.env
+
+# IDE config (optional, avoids committing personal editor settings)
+.vscode/
+.idea/
+.pytest_cache/
+
+# Packaging
+*.egg-info/
+build/
+dist/
+
+# OS
+.DS_Store

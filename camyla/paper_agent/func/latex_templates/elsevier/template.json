@@ -1,0 +1,104 @@
+{
+    "main_file": "template.tex",
+    "description": "Elsevier CAS template (copied from camyla/blank_elsevier_latex).",
+    "documentclass": "cas-sc",
+    "sections": [
+        {
+            "name": "Introduction",
+            "label": "sec:intro",
+            "description": "Introduce the problem, motivation, and main contributions of the paper",
+            "generation_mode": "direct"
+        },
+        {
+            "name": "Related Work",
+            "label": "sec:related",
+            "description": "Review existing literature and position your work in the context",
+            "generation_mode": "hierarchical",
+            "subsection_config": {
+                "min_subsections": 1,
+                "max_subsections": 2,
+                "target_words_per_subsection": 150,
+                "disable_subsubsections": true
+            }
+        },
+        {
+            "name": "Method",
+            "label": "sec:method",
+            "description": "Describe your proposed approach, architecture, and methodology in detail",
+            "generation_mode": "hierarchical",
+            "subsection_config": {
+                "min_subsections": 3,
+                "max_subsections": 6,
+                "target_words_per_subsection": 400
+            }
+        },
+        {
+            "name": "Experiments",
+            "label": "sec:experiments",
+            "description": "Present experimental setup, datasets, metrics, results, and analysis",
+            "generation_mode": "structured_experiments",
+            "fixed_structure": {
+                "subsections": [
+                    {
+                        "name": "Datasets and Implementation Details",
+                        "label": "subsec:implementation",
+                        "description": "Describe datasets, evaluation metrics, training details, and hyperparameters",
+                        "skill_path": "medical_segmentation/experiments_implementation.md",
+                        "target_words": 250
+                    },
+                    {
+                        "name": "Ablation Studies",
+                        "label": "subsec:ablation",
+                        "description": "Comprehensive ablation analysis with dynamic subsubsections for each experiment group",
+                        "skill_path": "medical_segmentation/experiments_ablation.md",
+                        "target_words": 600,
+                        "requires_ablation_data": true,
+                        "dynamic_subsubsections": true
+                    },
+                    {
+                        "name": "State-of-the-Art Comparisons",
+                        "label": "subsec:sota",
+                        "description": "Compare with SOTA methods, generalization, and efficiency analysis",
+                        "skill_path": "medical_segmentation/experiments_comparison.md",
+                        "target_words": 200
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Discussion",
+            "label": "sec:discussion",
+            "description": "Discuss implications, limitations, comparisons, and future work",
+            "generation_mode": "direct"
+        },
+        {
+            "name": "Conclusion",
+            "label": "sec:conclusion",
+            "description": "Summarize key findings, contributions, and impact",
+            "generation_mode": "direct"
+        }
+    ],
+    "metadata_fields": {
+        "title": {
+            "required": true,
+            "auto_generate": true,
+            "format": "\\title[mode=title]{%s}"
+        },
+        "author": {
+            "required": false,
+            "auto_generate": false,
+            "use_template_default": true,
+            "format": "\\author{%s}\\n\\affiliation{organization={%s}}"
+        },
+        "abstract": {
+            "required": true,
+            "auto_generate": true,
+            "format": "\\begin{abstract}\\n%s\\n\\end{abstract}"
+        },
+        "keywords": {
+            "required": false,
+            "auto_generate": true,
+            "format": "\\begin{keywords}\\n%s\\n\\end{keywords}"
+        }
+    }
+}

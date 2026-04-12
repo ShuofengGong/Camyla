@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "name": "912",
+    "full_name": "DERMA-OCTA",
+    "abbreviation": "DERMA-OCTA",
+    "description": "Vessel segmentation from dermatological OCTA images",
+    "dataset_id": 912,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "OCTA (Optical Coherence Tomography Angiography)",
+    "image_dimension": "2D",
+    "anatomical_region": "skin",
+    "target_structure": "blood vessels",
+    "labels": {
+      "background": 0,
+      "vessel": 1
+    },
+    "num_classes": 2,
+    "num_samples": 331,
+    "num_images": 331,
+    "patch_size": [
+      512,
+      512
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Swept-source OCT system (SS-OCT-1310, Insight Photonic Solutions) operating at 1310 nm with 29 nm bandwidth. Lateral resolution 19.5 μm, axial resolution 13.7 μm in air (9.8 μm in tissue). Scanned area: 1 cm² (512 × 512 A-lines) with 1.3 mm depth penetration. Images acquired at 22 ± 1°C with minimal probe pressure.",
+    "annotation_info": "Semi-automatic process using Amira software. Four annotators spent ~20 minutes per 3D volume. Manual refinement included removal of noisy areas and addition of missed vessels on individual 2D slices and 3D views. One technician and one clinician verified segmentation reliability. Final refinement removed isolated segments <200 voxels.",
+    "data_source": "Single institution (Medical University of Vienna) - DERMA-OCTA dataset",
+    "detailed_description": "The DERMA-OCTA dataset is a comprehensive dermatological optical coherence tomography angiography (OCTA) dataset comprising 330 volumetric scans from 74 subjects with various skin conditions. For our segmentation task, we use 2D average intensity projection (AIP) images derived from the 3D OCTA volumes, specifically the RGB-formatted en face projections. The dataset includes images from healthy subjects and patients with chronic venous disease (CVD) and various skin lesions. The segmentation task focuses on binary vessel segmentation (vessel vs. background) to enable quantitative analysis of skin microvasculature. Images have dimensions of 512 × 483 pixels corresponding to a physical area of 10.0 mm × 9.5 mm.",
+    "clinical_relevance": "Accurate vessel segmentation in dermatological OCTA enables quantitative assessment of microvascular patterns associated with various skin pathologies, including chronic venous disease and skin cancers. This supports non-invasive diagnosis, treatment monitoring, and understanding of disease progression through metrics like vessel density, diameter, and tortuosity.",
+    "reference": null,
+    "license": null
+  }
+}

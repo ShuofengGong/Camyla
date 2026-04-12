@@ -1,0 +1,43 @@
+{
+  "dataset": {
+    "name": "923",
+    "full_name": "OCT5k",
+    "abbreviation": "OCT5k",
+    "description": "Retinal layer segmentation from OCT B-scans",
+    "dataset_id": 923,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "OCT",
+    "image_dimension": "2D",
+    "anatomical_region": "eye",
+    "target_structure": "ILM, OPL/Henle's layer, IS-OS junction, IBRPE, OBRPE",
+    "labels": {
+      "background": 0,
+      "ILM": 1,
+      "OPL_Henles": 2,
+      "IS_OS_junction": 3,
+      "IBRPE": 4,
+      "OBRPE": 5
+    },
+    "num_classes": 6,
+    "num_samples": 1672,
+    "num_images": 1672,
+    "patch_size": [
+      512,
+      512
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1.0, 1.0],
+    "file_format": ".png",
+    "acquisition_info": "Heidelberg Spectralis OCT device, axial resolution 3.5 μm, scan dimension 8.9 × 7.4 mm², B-scans extracted from OCT volumes (19-69 scans per volume)",
+    "annotation_info": "Manual annotation by multiple expert graders using a custom platform, with initial model-assisted pre-segmentation followed by iterative correction. Annotations were quality-controlled using interquartile range outlier detection and repeated three times to ensure reliability.",
+    "data_source": "OCT5k dataset (publicly available at UCL Research Data Repository), with original OCT images sourced from the publicly available dataset by Rasti et al.",
+    "detailed_description": "The OCT5k dataset subset used in this study comprises 1672 OCT B-scans extracted from 60 OCT volumes (20 each from patients with Age-related Macular Degeneration (AMD), Diabetic Macular Edema (DME), and healthy subjects). The images were acquired using a Heidelberg Spectralis OCT device. The segmentation task involves pixel-wise annotation of five retinal layer boundaries: Internal Limiting Membrane (ILM), Outer Plexiform Layer/Henle's layer (OPL/Henle), Inner Segment-Outer Segment junction (IS-OS), Inner Boundary of Retinal Pigment Epithelium (IBRPE), and Outer Boundary of Retinal Pigment Epithelium (OBRPE). The annotations were created through a rigorous multi-grader process with iterative quality control.",
+    "clinical_relevance": "Accurate segmentation of retinal layers in OCT images is essential for quantitative analysis of retinal thickness and morphology, which is crucial for diagnosing and monitoring progression of retinal diseases such as AMD and DME, and for assessing treatment response.",
+    "reference": null,
+    "license": null
+  }
+}

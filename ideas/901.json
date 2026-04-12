@@ -1,0 +1,50 @@
+{
+  "dataset": {
+    "name": "901",
+    "full_name": "A comprehensive dataset of magnetic resonance enterography images with bowel segment annotations",
+    "abbreviation": "MRE-BSA",
+    "description": "Whole gastrointestinal tract segmentation from magnetic resonance enterography images",
+    "dataset_id": 901,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "abdomen",
+    "target_structure": "stomach, duodenum, small intestine, appendix, cecum, ascending colon, transverse colon, descending colon, sigmoid colon, rectum",
+    "labels": {
+      "background": 0,
+      "segment1": 1,
+      "segment2": 2,
+      "segment3": 3,
+      "segment4": 4,
+      "segment5": 5,
+      "segment6": 6,
+      "segment7": 7,
+      "segment8": 8,
+      "segment9": 9,
+      "segment10": 10
+    },
+    "num_classes": 11,
+    "num_samples": 114,
+    "num_images": 114,
+    "patch_size": [
+      24,
+      320,
+      256
+    ],
+    "spacing": [
+      4.799997329711914,
+      1.40625,
+      1.40625
+    ],
+    "median_spacing": [4.800000190734863, 1.40625, 1.40625],
+    "file_format": ".nii.gz",
+    "acquisition_info": "3.0T MRI scanners (Siemens Prisma or Vida) with T2-weighted HASTE sequences in coronal orientation, slice thickness 4mm, voxel size 1.2×1.2×4.0mm or 1.4×1.4×4.0mm, patients received 1600-2000mL of 2.5% mannitol for bowel distension",
+    "annotation_info": "Initial annotations by two experienced radiologists (3 and 6 years experience) using ITK-SNAP, followed by review and consensus by an abdominal imaging expert (>10 years experience), with iterative refinement using deep learning predictions",
+    "data_source": "Single institution (First Affiliated Hospital of Sun Yat-sen University) retrospective clinical data",
+    "detailed_description": "This dataset comprises magnetic resonance enterography (MRE) images from 114 patients with inflammatory bowel disease, focusing on whole gastrointestinal tract segmentation. The T2-weighted HASTE sequences were acquired on 3.0T Siemens scanners with coronal orientation and 4mm slice thickness. Each case includes pixel-level annotations of ten gastrointestinal segments: stomach, duodenum, small intestine, appendix, cecum, ascending colon, transverse colon, descending colon, sigmoid colon, and rectum. The annotations were created through a rigorous process involving multiple radiologists with iterative refinement using deep learning assistance.",
+    "clinical_relevance": "Accurate segmentation of gastrointestinal segments is essential for inflammatory bowel disease management, enabling precise localization of lesions, monitoring disease progression, and assessing treatment response in different bowel regions.",
+    "reference": null,
+    "license": null
+  }
+}

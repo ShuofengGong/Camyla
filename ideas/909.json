@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "909",
+    "full_name": "CirrMRI600+",
+    "abbreviation": "CirrMRI600+",
+    "description": "Cirrhotic liver segmentation from T2-weighted MRI scans",
+    "dataset_id": 909,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "abdomen",
+    "target_structure": "liver",
+    "labels": {
+      "background": 0,
+      "liver": 1
+    },
+    "num_classes": 2,
+    "num_samples": 373,
+    "num_images": 373,
+    "patch_size": [
+      24,
+      256,
+      256
+    ],
+    "spacing": [
+      6.599997043609619,
+      0.78125,
+      0.78125
+    ],
+    "median_spacing": [7.1999969482421875, 0.78125, 0.78125],
+    "file_format": ".nii.gz",
+    "acquisition_info": "MRI scans acquired from Philips Achieva 1.5T, Philips Achieva 3T, and Siemens Symphony 1.5T scanners. T2-weighted images were predominantly acquired using accelerated half-Fourier acquisition single-shot turbo spin-echo (HASTE) sequences in the axial plane, generating pseudo-3D volumes.",
+    "annotation_info": "Semi-automated two-stage approach: pre-segmentation using MRSegmentor followed by manual refinement by four clinicians/radiologists. Annotations underwent multiple iterations until consensus was achieved among annotators.",
+    "data_source": "Single-center study from Istanbul University School of Medicine (retrospective data from 2015-2022)",
+    "detailed_description": "The CirrMRI600+ dataset subset used in this study comprises 318 T2-weighted abdominal MRI scans from 339 patients with liver cirrhosis. This represents the T2W portion of the larger CirrMRI600+ dataset, which also includes T1-weighted scans. The dataset focuses specifically on segmenting cirrhotic livers, which present substantial challenges due to morphological alterations and heterogeneous signal characteristics. All images were acquired from three different scanner systems and converted to NIFTI format for analysis. Manual segmentation masks were created through a semi-automated process with expert radiologist refinement.",
+    "clinical_relevance": "Accurate segmentation of cirrhotic livers enables clinicians to monitor disease progression, assess severity, and plan treatments such as liver transplantation. It provides precise information on the extent and location of liver damage, which is crucial for managing chronic liver disease.",
+    "reference": null,
+    "license": null
+  }
+}

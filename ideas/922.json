@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "922",
+    "full_name": "NLSTseg",
+    "abbreviation": "NLSTseg",
+    "description": "Lung tumor segmentation from low-dose CT scans",
+    "dataset_id": 922,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "CT",
+    "image_dimension": "3D",
+    "anatomical_region": "thorax",
+    "target_structure": "lung tumor",
+    "labels": {
+      "background": 0,
+      "tumor": 1
+    },
+    "num_classes": 2,
+    "num_samples": 604,
+    "num_images": 604,
+    "patch_size": [
+      80,
+      192,
+      160
+    ],
+    "spacing": [
+      1.25,
+      0.6640620231628418,
+      0.6640620231628418
+    ],
+    "median_spacing": [2.0, 0.6640620231628418, 0.6640620231628418],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Low-dose CT (LDCT) scans from multiple institutions (GE, Philips, Siemens, Toshiba scanners) with slice thickness ranging from 0.625mm to 3.5mm and pixel spacing from 0.49mm to 0.87mm. No contrast agents were used.",
+    "annotation_info": "Manual pixel-level segmentation by a researcher with two years of imaging experience and a radiologist specializing in oncology with five years of experience, with cross-verification by a radiation oncologist (10 years experience) and another radiologist (10 years experience).",
+    "data_source": "NLST (National Lung Screening Trial) dataset from The Cancer Imaging Archive (TCIA), multi-center study from 33 institutions",
+    "detailed_description": "The NLSTseg dataset is a subset of the National Lung Screening Trial (NLST) containing low-dose CT (LDCT) scans with pixel-level annotations of lung tumors. This subset comprises 604 LDCT scans from patients with confirmed lung cancer, focusing specifically on tumor segmentation. The scans were acquired from 33 different institutions using various CT scanners (GE, Philips, Siemens, Toshiba) with slice thickness ranging from 0.625mm to 3.5mm. Manual annotations were performed by experienced clinicians using 3D Slicer software, with lesions ranging in volume from 0.03 cm³ to 372.21 cm³.",
+    "clinical_relevance": "Accurate lung tumor segmentation from LDCT scans is crucial for early lung cancer detection, treatment planning, and monitoring disease progression, particularly given LDCT's established role in reducing lung cancer mortality through screening programs.",
+    "reference": null,
+    "license": null
+  }
+}

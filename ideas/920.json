@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "920",
+    "full_name": "MSLesSeg",
+    "abbreviation": "MSLesSeg",
+    "description": "Multiple sclerosis lesion segmentation from multimodal brain MRI",
+    "dataset_id": 920,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "brain",
+    "target_structure": "multiple sclerosis lesions",
+    "labels": {
+      "background": 0,
+      "lesion": 1
+    },
+    "num_classes": 2,
+    "num_samples": 115,
+    "num_images": 115,
+    "patch_size": [
+      128,
+      128,
+      128
+    ],
+    "spacing": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1, 1],
+    "file_format": ".nii.gz",
+    "acquisition_info": "1.5T and 3T MRI scanners with T1-weighted, T2-weighted, and FLAIR sequences. FLAIR: mean slice thickness 2.61mm (±0.62), pixel spacing 0.75×0.75mm (±0.32×0.32). T1-w: mean slice thickness 1.14mm (±0.81), pixel spacing 0.91×0.91mm (±0.32). T2-w: mean slice thickness 4.24mm (±0.92), pixel spacing 0.58×0.58mm (±0.27).",
+    "annotation_info": "Manual segmentation by a junior rater with validation by two senior experts (neuroradiologist and neurologist). FLAIR was primary modality with cross-checking using T2-w and T1-w sequences. Annotations were reviewed and validated by senior experts to establish ground truth.",
+    "data_source": "MSLesSeg dataset, collected from Garibaldi Hospital (Catania, Italy) with additional scans from private clinics. Part of the dataset was used in the ICPR 2024 Competition on Multiple Sclerosis Lesion Segmentation.",
+    "detailed_description": "The MSLesSeg dataset is a publicly available brain MRI dataset designed for multiple sclerosis lesion segmentation. It contains 115 multimodal MRI scans from 75 patients, including T1-weighted, T2-weighted, and FLAIR sequences. All images were co-registered to the MNI152 template (1mm³ resolution) and skull-stripped, resulting in standardized NIFTI format with dimensions 182×218×182. Expert-validated manual segmentation masks were created with FLAIR as the primary modality, supplemented by T2-w and T1-w sequences for ambiguous cases. The dataset includes patients with different MS subtypes (RRMS, SPMS, PPMS) and varying disease stages.",
+    "clinical_relevance": "Accurate segmentation of MS lesions is crucial for monitoring disease progression, assessing treatment efficacy, and quantifying lesion burden. Automated segmentation can reduce inter-rater variability and labor-intensive manual annotation in clinical practice.",
+    "reference": null,
+    "license": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "dataset": {
+    "name": "907",
+    "full_name": "BTXRD",
+    "abbreviation": "BTXRD",
+    "description": "Benign and malignant bone tumor segmentation from X-ray radiographs",
+    "dataset_id": 907,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "X-ray",
+    "image_dimension": "2D",
+    "anatomical_region": "limbs",
+    "target_structure": "primary bone tumors (benign b-tumor, malignant m-tumor)",
+    "labels": {
+      "background": 0,
+      "b-tumor": 1,
+      "m-tumor": 2
+    },
+    "num_classes": 3,
+    "num_samples": 1867,
+    "num_images": 1867,
+    "patch_size": [
+      512,
+      512
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [
+      1,
+      1
+    ],
+    "file_format": ".png",
+    "acquisition_info": "Clinical X-ray radiographs from multiple centers, converted from DICOM to 8-bit grayscale JPEG format. Images include frontal, lateral, and oblique views of upper limbs (hands, ulna, radius, humerus, wrist, elbow, shoulder joints), lower limbs (feet, tibia, fibula, femur, ankle, knee joints), and pelvis (hips, hip joints).",
+    "annotation_info": "Manual segmentation by a bone tumor specialist with 10 years of experience using LabelMe annotation tool, with subsequent review by another specialist with 20 years of experience. Annotation consistency validated with Dice score 0.90 ± 0.07 on 50 randomly selected images.",
+    "data_source": "Multi-center study from three sources: Center 1 (three hospitals in China), Center 2 (Radiopaedia.org online platform), and Center 3 (MedPix public database)",
+    "detailed_description": "The Bone Tumor X-ray Radiograph dataset (BTXRD) subset used in this study comprises 1,867 grayscale X-ray images of primary bone tumors. The nnUNet version uses binary labels: benign tumor (b-tumor) and malignant tumor (m-tumor). All images were manually annotated by experienced radiologists using LabelMe, with high inter-annotator consistency (Dice score: 0.90 ± 0.07). The images cover upper limbs, lower limbs, and pelvic regions, with patients aged 1-88 years.",
+    "clinical_relevance": "Accurate segmentation of primary bone tumors from X-ray radiographs is crucial for computer-aided diagnosis, treatment planning, and monitoring tumor progression. X-ray remains the primary screening tool for bone tumors, making automated segmentation valuable for assisting radiologists in early detection and characterization.",
+    "reference": null,
+    "license": null
+  }
+}

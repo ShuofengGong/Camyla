@@ -1,0 +1,44 @@
+{
+  "dataset": {
+    "name": "927",
+    "full_name": "Spine endoscopic atlas_an open-source dataset for surgical instrument segmentation",
+    "abbreviation": "SEA-SIS",
+    "description": "Surgical instrument segmentation from endoscopic spine surgery videos",
+    "dataset_id": 927,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "Endoscopy",
+    "image_dimension": "2D",
+    "anatomical_region": "spine",
+    "target_structure": "surgical instruments (bipolar, dissector, drill, grasping forceps, punch, scissor)",
+    "labels": {
+      "background": 0,
+      "bipolar": 1,
+      "dissector": 2,
+      "drill": 3,
+      "grasping forceps": 4,
+      "punch": 5,
+      "scissor": 6
+    },
+    "num_classes": 7,
+    "num_samples": 10662,
+    "num_images": 10662,
+    "patch_size": [
+      896,
+      1536
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Endoscopic videos recorded at 60 fps in 1080P/720P resolution using STORZ (IMAGE1 S) and L'CARE equipment with Joimax and Spinendos endoscopes. No preprocessing applied.",
+    "annotation_info": "Manual segmentation using LabelMe and 3D Slicer by trained annotators with two-stage quality control. Initial 200 images annotated by two annotators for consistency assessment (DC: 0.8743-0.9550, IoU: 0.8021-0.9166). Annotations reviewed by junior reviewers with senior reviewer arbitration.",
+    "data_source": "Multi-center study from two medical centers (Shenzhen Nanshan People's Hospital and another center)",
+    "detailed_description": "The Spine Endoscopic Atlas (SEA) dataset contains 10,662 annotated endoscopic images from 119 patients undergoing cervical and lumbar spine surgery. Images were extracted from surgical videos at 1 frame per second and manually segmented for six surgical instrument types: bipolar, dissector, drill, grasping forceps, punch, and scissor. The dataset includes both normal scenarios and challenging conditions with blood, bubbles, tissue occlusion, and exposure variations. All images were acquired using standard endoscopic equipment without preprocessing to preserve realistic surgical conditions.",
+    "clinical_relevance": "Accurate instrument segmentation is crucial for developing intelligent surgical assistance systems in endoscopic spine surgery, enabling real-time instrument tracking, navigation, and safety monitoring to enhance surgical precision and reduce complications.",
+    "reference": null,
+    "license": null
+  }
+}

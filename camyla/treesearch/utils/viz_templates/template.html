@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camyla Experiment Visualization</title>
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+      <!-- placeholder -->
+    </script>
+    
+    <style>
+      :root {
+        --bg-primary: #0f0f14;
+        --bg-secondary: #1a1a24;
+        --bg-tertiary: #252532;
+        --bg-card: #1e1e2a;
+        --border-color: #2a2a3a;
+        --text-primary: #f0f0f5;
+        --text-secondary: #a0a0b0;
+        --text-muted: #606070;
+        --accent-primary: #6366f1;
+        --accent-secondary: #8b5cf6;
+        --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+        --success: #22c55e;
+        --warning: #f59e0b;
+        --error: #ef4444;
+        --info: #3b82f6;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+        --transition-fast: 150ms ease;
+        --transition-normal: 250ms ease;
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 16px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--bg-primary);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow: hidden;
+      }
+
+      /* Top Navigation Bar */
+      .top-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        z-index: 100;
+        gap: 24px;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.1rem;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        white-space: nowrap;
+      }
+
+      .stage-tabs {
+        display: flex;
+        gap: 4px;
+        background: var(--bg-tertiary);
+        padding: 4px;
+        border-radius: var(--radius-md);
+      }
+
+      .stage-tab {
+        padding: 8px 20px;
+        border: none;
+        background: transparent;
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.9rem;
+        cursor: pointer;
+        border-radius: var(--radius-sm);
+        transition: all var(--transition-fast);
+        font-family: inherit;
+      }
+
+      .stage-tab:hover:not(.disabled) {
+        color: var(--text-primary);
+        background: rgba(99, 102, 241, 0.1);
+      }
+
+      .stage-tab.active {
+        background: var(--accent-gradient);
+        color: white;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .stage-tab.disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      /* Proposal Selector */
+      .proposal-selector {
+        display: none;
+        align-items: center;
+        gap: 12px;
+        margin-left: 8px;
+        padding-left: 16px;
+        border-left: 1px solid var(--border-color);
+      }
+
+      .proposal-selector.visible {
+        display: flex;
+      }
+
+      .proposal-label {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+
+      .proposal-dropdown {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        padding: 8px 36px 8px 14px;
+        border-radius: var(--radius-sm);
+        font-size: 0.9rem;
+        font-family: inherit;
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a0a0b0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        min-width: 180px;
+        transition: all var(--transition-fast);
+      }
+
+      .proposal-dropdown:hover {
+        border-color: var(--accent-primary);
+      }
+
+      .proposal-dropdown:focus {
+        outline: none;
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+      }
+
+      /* Main Layout */
+      .main-container {
+        display: flex;
+        height: calc(100vh - 60px);
+        margin-top: 60px;
+      }
+
+      /* Node List Container (left panel) */
+      #node-list-container {
+        width: 45%;
+        height: 100%;
+        background: var(--bg-primary);
+        overflow-y: auto;
+        padding: 12px;
+      }
+
+      .node-list-header {
+        padding: 8px 12px 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-muted);
+      }
+
+      .node-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        margin-bottom: 4px;
+        border-radius: var(--radius-sm);
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+      }
+
+      .node-row:hover {
+        background: var(--bg-tertiary);
+        border-color: var(--border-color);
+      }
+
+      .node-row.selected {
+        background: rgba(99, 102, 241, 0.1);
+        border-color: var(--accent-primary);
+      }
+
+      .node-row.is-best {
+        border-left: 3px solid var(--success);
+      }
+
+      .node-row.is-buggy {
+        border-left: 3px solid var(--error);
+      }
+
+      .node-step {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--bg-tertiary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-secondary);
+      }
+
+      .node-row.is-best .node-step {
+        background: rgba(34, 197, 94, 0.2);
+        color: var(--success);
+      }
+
+      .node-row.is-buggy .node-step {
+        background: rgba(239, 68, 68, 0.2);
+        color: var(--error);
+      }
+
+      .node-info {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .node-plan-summary {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .node-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      .node-parent-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background: var(--bg-tertiary);
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+      }
+
+      .node-parent-tag svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      .node-metric-chip {
+        flex-shrink: 0;
+        text-align: right;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
+
+      .node-metric-chip .metric-value {
+        color: var(--accent-primary);
+        font-weight: 600;
+      }
+
+      /* Info Panel */
+      .info-panel {
+        width: 55%;
+        height: 100%;
+        background: var(--bg-secondary);
+        overflow-y: auto;
+        border-left: 1px solid var(--border-color);
+      }
+
+      .info-header {
+        position: sticky;
+        top: 0;
+        background: var(--bg-secondary);
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 10;
+      }
+
+      .info-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .node-badge {
+        background: var(--accent-gradient);
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: white;
+      }
+
+      .info-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: all var(--transition-normal);
+      }
+
+      .card:hover {
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: var(--shadow-md);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        background: var(--bg-tertiary);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .card-title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .card-icon {
+        width: 18px;
+        height: 18px;
+        opacity: 0.7;
+      }
+
+      .card-body {
+        padding: 16px;
+      }
+
+      /* Code Block */
+      .code-block {
+        background: #1a1b26;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+      }
+
+      .code-block pre {
+        margin: 0;
+        padding: 16px;
+        overflow-x: auto;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+
+      .code-block code {
+        font-family: inherit;
+      }
+
+      /* Metrics Table */
+      .metrics-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .metric-group {
+        background: var(--bg-tertiary);
+        padding: 14px;
+        border-radius: var(--radius-sm);
+      }
+
+      .metric-name {
+        font-weight: 600;
+        color: var(--accent-primary);
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+      }
+
+      .metric-description {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-bottom: 12px;
+      }
+
+      .metric-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+      }
+
+      .metric-table th,
+      .metric-table td {
+        padding: 10px 12px;
+        text-align: left;
+        border: 1px solid var(--border-color);
+      }
+
+      .metric-table th {
+        background: var(--bg-secondary);
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      .metric-table td {
+        color: var(--text-primary);
+      }
+
+      /* Status Badges */
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .status-badge.success {
+        background: rgba(34, 197, 94, 0.15);
+        color: var(--success);
+      }
+
+      .status-badge.error {
+        background: rgba(239, 68, 68, 0.15);
+        color: var(--error);
+      }
+
+      .status-badge.warning {
+        background: rgba(245, 158, 11, 0.15);
+        color: var(--warning);
+      }
+
+      /* Exception Info */
+      .exception-card {
+        border-color: rgba(239, 68, 68, 0.3);
+      }
+
+      .exception-card .card-header {
+        background: rgba(239, 68, 68, 0.1);
+      }
+
+      .exception-type {
+        color: var(--error);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .exception-message {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        background: rgba(239, 68, 68, 0.05);
+        padding: 12px;
+        border-radius: var(--radius-sm);
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .stack-trace {
+        margin-top: 12px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        max-height: 200px;
+        overflow-y: auto;
+        background: #1a1b26;
+        padding: 12px;
+        border-radius: var(--radius-sm);
+      }
+
+      /* Execution Time */
+      .exec-time {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+      }
+
+      .exec-time-value {
+        font-weight: 600;
+        color: var(--accent-primary);
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      /* Plots Container */
+      .plots-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+      }
+
+      .plot-item {
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        background: var(--bg-tertiary);
+      }
+
+      .plot-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform var(--transition-normal);
+      }
+
+      .plot-item:hover img {
+        transform: scale(1.02);
+      }
+
+      /* Datasets Tested */
+      .datasets-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .dataset-chip {
+        background: rgba(34, 197, 94, 0.1);
+        color: var(--success);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(34, 197, 94, 0.2);
+      }
+
+      /* Empty State */
+      .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        color: var(--text-muted);
+        text-align: center;
+      }
+
+      .empty-state-icon {
+        font-size: 3rem;
+        margin-bottom: 12px;
+        opacity: 0.5;
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-tertiary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted);
+      }
+
+      /* Plan Text */
+      .plan-text {
+        white-space: pre-wrap;
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: var(--text-primary);
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .card {
+        animation: fadeIn 0.3s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+      <div class="logo">Camyla</div>
+      
+      <div class="stage-tabs" id="stage-tabs">
+        <button class="stage-tab" data-stage="Stage_1" onclick="selectStage('Stage_1')">Stage 1</button>
+        <button class="stage-tab" data-stage="Stage_2" onclick="selectStage('Stage_2')">Stage 2</button>
+        <button class="stage-tab" data-stage="Stage_3" onclick="selectStage('Stage_3')">Stage 3</button>
+      </div>
+      
+      <div class="proposal-selector" id="proposal-selector">
+        <span class="proposal-label">Proposal:</span>
+        <select class="proposal-dropdown" id="proposal-dropdown" onchange="selectProposal(this.value)">
+        </select>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <!-- Node List (left panel) -->
+      <div id="node-list-container">
+        <div class="node-list-header" id="node-list-header">Experiments</div>
+      </div>
+      
+      <!-- Info Panel -->
+      <aside class="info-panel">
+        <div class="info-header">
+          <h2 class="info-title" id="info-title">
+            <span>Select a node</span>
+          </h2>
+        </div>
+        
+        <div class="info-content" id="info-content">
+          <!-- Plan Card -->
+          <div class="card" id="plan-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                </svg>
+                Plan
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="plan-text" id="plan"></div>
+            </div>
+          </div>
+
+          <!-- Execution Time Card -->
+          <div class="card" id="exec-time-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+                Execution Time
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="exec-time">
+                <span>Duration:</span>
+                <span class="exec-time-value" id="exec_time">-</span>
+                <span>seconds</span>
+              </div>
+              <div id="exec_time_feedback" style="margin-top: 12px; color: var(--text-secondary);"></div>
+            </div>
+          </div>
+
+          <!-- Exception Card -->
+          <div class="card exception-card" id="exception-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="var(--error)" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                Exception
+              </span>
+              <span class="status-badge error" id="exc_type_badge"></span>
+            </div>
+            <div class="card-body">
+              <div class="exception-message" id="exc_info"></div>
+              <div class="stack-trace" id="exc_stack"></div>
+            </div>
+          </div>
+
+          <!-- Metrics Card -->
+          <div class="card" id="metrics-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3v18h18"/>
+                  <path d="M18 17V9"/>
+                  <path d="M13 17V5"/>
+                  <path d="M8 17v-3"/>
+                </svg>
+                Metrics
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="metrics-container" id="metrics"></div>
+            </div>
+          </div>
+
+          <!-- Datasets Tested Card -->
+          <div class="card" id="datasets-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                Datasets Tested
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="datasets-list" id="datasets_successfully_tested"></div>
+            </div>
+          </div>
+
+          <!-- Plots Card -->
+          <div class="card" id="plots-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                Plots
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="plots-grid" id="plots"></div>
+            </div>
+          </div>
+
+          <!-- Code Card -->
+          <div class="card" id="code-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+                Code
+              </span>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <div class="code-block">
+                <pre><code id="code" class="language-python"></code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plot Code Card -->
+          <div class="card" id="plot-code-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+                Plot Code
+              </span>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <div class="code-block">
+                <pre><code id="plot_code" class="language-python"></code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plot Plan Card -->
+          <div class="card" id="plot-plan-card" style="display: none;">
+            <div class="card-header">
+              <span class="card-title">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+                Plot Plan
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="plan-text" id="plot_plan"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

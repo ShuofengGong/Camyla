@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "932",
+    "full_name": "UT-EndoMRI",
+    "abbreviation": "UT-EndoMRI",
+    "description": "Uterus segmentation from T2-weighted pelvic MRI scans",
+    "dataset_id": 932,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "pelvis",
+    "target_structure": "uterus",
+    "labels": {
+      "background": 0,
+      "uterus": 1
+    },
+    "num_classes": 2,
+    "num_samples": 57,
+    "num_images": 57,
+    "patch_size": [
+      28,
+      256,
+      256
+    ],
+    "spacing": [
+      4.960000038146973,
+      0.6510416865348816,
+      0.6510416865348816
+    ],
+    "median_spacing": [6.0, 0.6510416865348816, 0.6510416865348816],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Multi-center MRI from 15 sites using nine scanner models from GE, Philips, and Siemens with 1.5T and 3T field strengths. T2-weighted sequences were used for uterus segmentation.",
+    "annotation_info": "Manual segmentation by three raters (medical professionals) with contours reviewed and corrected by an experienced abdominal radiologist. Uterus was contoured prioritizing T2-weighted sequences.",
+    "data_source": "Multi-center dataset from Memorial Hermann Hospital System (Dataset 1 in the paper)",
+    "detailed_description": "This dataset is a subset of the UTHealth Endometriosis MRI Dataset (UT-EndoMRI), specifically focusing on T2-weighted MRI scans of the female pelvis. It contains 57 subjects with manual segmentation of the uterus. The data was collected from 15 clinical sites using multiple MRI scanner models from three vendors with both 1.5T and 3T field strengths. Uterus segmentation was performed by three raters with review by an expert abdominal radiologist. The dataset was developed to support endometriosis research through pelvic organ segmentation.",
+    "clinical_relevance": "Accurate uterus segmentation in endometriosis patients is important for surgical planning, treatment monitoring, and understanding pelvic anatomy in patients with this condition that affects approximately 190 million females worldwide.",
+    "reference": null,
+    "license": null
+  }
+}

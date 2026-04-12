@@ -1,0 +1,42 @@
+{
+  "dataset": {
+    "name": "918",
+    "full_name": "LapGC-KVAD-30",
+    "abbreviation": "LapGC-KVAD-30",
+    "description": "Segmentation of key perigastric vessels from laparoscopic gastric cancer surgery videos",
+    "dataset_id": 918,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "Endoscopy",
+    "image_dimension": "2D",
+    "anatomical_region": "abdomen",
+    "target_structure": "left gastric artery (LGA), left gastric vein (LGV), common hepatic artery (CHA), splenic artery (SA)",
+    "labels": {
+      "background": 0,
+      "LGA": 1,
+      "LGV": 2,
+      "CHA": 3,
+      "SA": 4
+    },
+    "num_classes": 5,
+    "num_samples": 1252,
+    "num_images": 1252,
+    "patch_size": [
+      896,
+      1536
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Laparoscopic videos recorded with KARL STORZ cameras at 1920 × 1080 resolution, white-light modality, extracted at 25 fps, saved as PNG files",
+    "annotation_info": "Pixel-level segmentation by five medical annotators (novice surgeon and medical students) supervised and reviewed by three expert surgeons with >300 LapGC surgeries experience, using LabelMe with polygonal annotation tool and strict annotation protocol",
+    "data_source": "Single institution (Nanfang Hospital, Southern Medical University) retrospective surgical videos",
+    "detailed_description": "This dataset is a subset of the LapGC-KVAD-30 (Laparoscopic Gastric Cancer Key Vascular Anatomy Dataset), focusing on the segmentation of four key perigastric vessels during D2 lymph node dissection in laparoscopic distal gastrectomy. The subset contains 1252 training images extracted from 30 complete surgical videos, with annotations for the left gastric artery (LGA), left gastric vein (LGV), common hepatic artery (CHA), and splenic artery (SA). All images were acquired using KARL STORZ laparoscopic cameras at 1920 × 1080 resolution and represent the dynamic exposure, dissection, and ligation process of these vessels. The annotations were created through a rigorous process involving medical annotators and expert surgical review.",
+    "clinical_relevance": "Accurate segmentation of perigastric vessels is crucial for surgical navigation and safety during laparoscopic gastric cancer surgery, helping to prevent vascular injuries and intraoperative bleeding during complex D2 lymph node dissection procedures.",
+    "reference": null,
+    "license": null
+  }
+}

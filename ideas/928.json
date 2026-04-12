@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "name": "928",
+    "full_name": "STS-Tooth",
+    "abbreviation": "STS-Tooth",
+    "description": "Tooth segmentation from panoramic X-ray images",
+    "dataset_id": 928,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "X-ray",
+    "image_dimension": "2D",
+    "anatomical_region": "oral",
+    "target_structure": "tooth",
+    "labels": {
+      "background": 0,
+      "tooth": 1
+    },
+    "num_classes": 2,
+    "num_samples": 850,
+    "num_images": 850,
+    "patch_size": [
+      320,
+      640
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Panoramic X-ray images acquired using HiRes3D-Plus device (Changzhou Boneng Zhongding Medical Technology), resolution standardized to 640 × 320 pixels",
+    "annotation_info": "Mixed annotation method: initial manual annotation by 20 trained dental practitioners using EISeg and LabelMe software, followed by iterative semi-automatic annotation using R2 U-Net predictions with manual correction and verification by 6 experienced dentists",
+    "data_source": "Multi-center study from Hangzhou Dental Hospital, Hangzhou Qiantang Dental Hospital, and Sichuan Provincial People's Hospital",
+    "detailed_description": "This dataset is a subset of the STS-2D-Tooth (Adult Panoramic X-ray Images) component of the STS-Tooth multimodal dental dataset. It consists of 850 annotated panoramic X-ray images (PXI) with corresponding binary segmentation masks for tooth segmentation. The images were acquired from adult patients using HiRes3D-Plus devices and were preprocessed to a standardized resolution of 640 × 320 pixels. The segmentation task focuses on delineating all tooth structures within the oral cavity, which is clinically relevant for dental diagnosis and treatment planning.",
+    "clinical_relevance": "Accurate tooth segmentation from panoramic X-rays assists dentists in detecting dental issues such as impacted teeth, skeletal anomalies, and cysts, and provides essential information for treatment planning and computer-aided diagnosis in dental care.",
+    "reference": null,
+    "license": null
+  }
+}

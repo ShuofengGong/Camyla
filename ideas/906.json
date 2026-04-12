@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "906",
+    "full_name": "BONBID2023",
+    "abbreviation": "BONBID2023",
+    "description": "Hypoxic ischemic encephalopathy (HIE) lesion segmentation from neonatal brain diffusion MRI",
+    "dataset_id": 906,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "brain",
+    "target_structure": "HIE-related brain lesions",
+    "labels": {
+      "background": 0,
+      "lesion": 1
+    },
+    "num_classes": 2,
+    "num_samples": 89,
+    "num_images": 89,
+    "patch_size": [
+      48,
+      160,
+      160
+    ],
+    "spacing": [
+      2.200000047683716,
+      1.375,
+      1.375
+    ],
+    "median_spacing": [2.200000047683716, 1.375, 1.375],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Diffusion MRI acquired on GE 1.5T Signa or Siemens 3T TrioTim/PrismaFit scanners. Protocol: TR=7500–9500 ms, TE=80–115 ms, b=1000 s/mm². Resolution: 1.5×1.5×(2.0–4.0) mm³ (GE) or 2×2×2 mm³ (Siemens).",
+    "annotation_info": "Multi-expert consensus annotation. Primary annotation by a clinical fellow (>1.5 years neuroradiology training) on ADC maps, with uncertainties resolved by consensus discussion among three experienced pediatric neuroradiologists (>5-20 years experience).",
+    "data_source": "Single institution (Massachusetts General Hospital) retrospective clinical data, released as the BONBID-HIE dataset.",
+    "detailed_description": "This dataset is a subset of the BONBID-HIE (BOston Neonatal Brain Injury Dataset for Hypoxic Ischemic Encephalopathy) dataset, comprising 89 training cases. It includes 3D neonatal brain diffusion MRI scans from patients diagnosed with HIE. The target for segmentation is HIE-related lesions, which are characteristically diffuse and small, with over half of patients having lesions occupying <1% of brain volume. For each case, two derived modalities are provided: the skull-stripped Apparent Diffusion Coefficient (ADC) map and the corresponding anatomy-normalized Z_ADC map. Manual lesion annotations serve as the segmentation ground truth.",
+    "clinical_relevance": "Accurate segmentation of HIE lesions is crucial for identifying high-risk neonates, evaluating treatment effects, and predicting long-term neurodevelopmental outcomes, which is essential for improving clinical care and prognosis.",
+    "reference": null,
+    "license": null
+  }
+}

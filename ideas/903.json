@@ -1,0 +1,48 @@
+{
+  "dataset": {
+    "name": "903",
+    "full_name": "A dataset of synthetic, maturation-informed magnetic resonance images of the human fetal brain",
+    "abbreviation": "SMRI-FB",
+    "description": "Multi-tissue segmentation of the fetal brain from synthetic T2-weighted MRI.",
+    "dataset_id": 903,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "brain",
+    "target_structure": "external CSF, grey matter, white matter, ventricles, cerebellum, deep grey matter, brainstem, corpus callosum",
+    "labels": {
+      "background": 0,
+      "external_CSF": 1,
+      "grey_matter": 2,
+      "white_matter": 3,
+      "ventricles": 4,
+      "cerebellum": 5,
+      "deep_grey_matter": 6,
+      "brainstem": 7,
+      "corpus_callosum": 8
+    },
+    "num_classes": 9,
+    "num_samples": 70,
+    "num_images": 70,
+    "patch_size": [
+      128,
+      112,
+      128
+    ],
+    "spacing": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "median_spacing": [0.800000011920929, 0.800000011920929, 0.800000011920929],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Synthetic images simulating 1.5T/3T GE scanners using T2-weighted Single-Shot Fast Spin Echo (SS-FSE) sequences. Parameters include: slice thickness 3.0-5.0 mm, in-plane resolution 0.5 mm isotropic, TR/TE 2000-3500 ms/120 ms, flip angle 90°.",
+    "annotation_info": "High-resolution multi-tissue annotations from the FeTA dataset with refined annotations, which were manually corrected by clinical experts. The labels were automatically propagated to the simulated low-resolution series via nearest-neighbor interpolation.",
+    "data_source": "Synthetic dataset generated from the public Fetal Tissue Annotations (FeTA) dataset using the FaBiAN v2.0 simulation framework.",
+    "detailed_description": "This dataset consists of 70 synthetic T2-weighted MRI scans of the developing fetal brain, generated using the FaBiAN v2.0 numerical phantom. The images simulate realistic clinical low-resolution acquisitions from 1.5T and 3T GE scanners. The corresponding segmentation masks delineate nine tissue classes: background, external CSF, grey matter, white matter, ventricles, cerebellum, deep grey matter, brainstem, and corpus callosum. The synthetic data is derived from high-resolution annotations of real clinical subjects from the FeTA dataset, with gestational ages ranging from 20.0 to 34.8 weeks.",
+    "clinical_relevance": "Accurate multi-tissue segmentation of the fetal brain is crucial for quantifying brain development, detecting abnormalities, and planning postnatal interventions. It enables the study of normal and pathological brain maturation in utero.",
+    "reference": null,
+    "license": null
+  }
+}

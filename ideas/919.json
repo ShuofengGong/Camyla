@@ -1,0 +1,40 @@
+{
+  "dataset": {
+    "name": "919",
+    "full_name": "LongCIU",
+    "abbreviation": "LongCIU",
+    "description": "Ground glass opacity and consolidation segmentation from chest CT scans of Long COVID patients",
+    "dataset_id": 919,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "CT",
+    "image_dimension": "2D",
+    "anatomical_region": "thorax",
+    "target_structure": "ground glass opacities and consolidations in lungs",
+    "labels": {
+      "background": 0,
+      "GGO": 1,
+      "consolidation": 2
+    },
+    "num_classes": 3,
+    "num_samples": 90,
+    "num_images": 90,
+    "patch_size": [
+      512,
+      512
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".nii.gz",
+    "acquisition_info": "Siemens scanners, noncontrast chest CT with inspiratory scan at total lung capacity, iterative reconstruction with section thickness × interval of 1 × 0.5 mm",
+    "annotation_info": "Manual segmentation by three independent expert annotator pairs (each with a pulmonologist and trainee), blind annotation without automated initialization, final consensus created using STAPLE algorithm",
+    "data_source": "Single institution (University of Iowa Hospitals and Clinics) from Long COVID study",
+    "detailed_description": "The Long COVID Iowa-UNICAMP (LongCIU) dataset comprises 90 axial CT slices from 9 Long COVID patients with persistent lung opacities. This dataset focuses on the challenging segmentation of ground glass opacities (GGO) and consolidations in the lungs, which are common findings in post-COVID pulmonary sequelae. All images were acquired using Siemens CT scanners with standardized noncontrast protocols and iterative reconstruction. The dataset includes individual annotations from three independent expert annotator pairs plus a STAPLE consensus segmentation, providing valuable data for studying interrater uncertainty in opacity segmentation.",
+    "clinical_relevance": "Accurate segmentation of GGO and consolidations is crucial for quantifying lung involvement in Long COVID patients, assessing disease severity, and monitoring treatment response over time.",
+    "reference": null,
+    "license": null
+  }
+}

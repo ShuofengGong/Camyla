@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "name": "915",
+    "full_name": "Fundus-AVSeg",
+    "abbreviation": "Fundus-AVSeg",
+    "description": "Retinal artery and vein segmentation from fundus images",
+    "dataset_id": 915,
+    "configuration": "2d",
+    "task_type": "segmentation",
+    "modality": "Fundus",
+    "image_dimension": "2D",
+    "anatomical_region": "eye",
+    "target_structure": "retinal arteries and veins",
+    "labels": {
+      "background": 0,
+      "Artery": 1,
+      "Vein": 2,
+      "Uncertain": 3
+    },
+    "num_classes": 4,
+    "num_samples": 100,
+    "num_images": 100,
+    "patch_size": [
+      1280,
+      1024
+    ],
+    "spacing": [
+      1.0,
+      1.0
+    ],
+    "median_spacing": [1, 1],
+    "file_format": ".png",
+    "acquisition_info": "Fundus images captured using ZEISS VISUCAM200 or Canon fundus cameras during real clinical diagnostic processes. Two resolutions: 2656 × 1992 and 1280 × 1280. Images are in PNG format with no compression applied.",
+    "annotation_info": "Pixel-wise manual annotation by professional ophthalmologists using 3D Slicer software. Initial annotation by two junior ophthalmologists per image, with uncertain regions reviewed by a senior ophthalmologist. Annotation categories: arteries (red), veins (blue), artery-vein crossings (green), and uncertain vessels (white).",
+    "data_source": "Single institution (Shenzhen Eye Hospital) clinical data from 100 patients collected between January and March 2022.",
+    "detailed_description": "The Fundus-AVSeg dataset is specifically designed for retinal artery-vein vessel segmentation. It consists of 100 high-resolution fundus images (2656 × 1992 or 1280 × 1280) from 100 patients, including 40 normal cases, 20 diabetic retinopathy cases, 20 age-related macular degeneration cases, and 20 glaucoma cases. Each image has pixel-wise manual annotations distinguishing arteries, veins, artery-vein crossings, and uncertain vessels. The dataset includes both high-quality and intentionally included low-quality images (17% of total) to simulate real clinical conditions.",
+    "clinical_relevance": "Accurate segmentation of retinal arteries and veins enables quantitative analysis of vessel morphology, which is associated with systemic chronic diseases including cardiovascular disease, diabetes, glaucoma, and hypertension, providing a basis for early screening and diagnosis.",
+    "reference": null,
+    "license": null
+  }
+}

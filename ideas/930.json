@@ -1,0 +1,49 @@
+{
+  "dataset": {
+    "name": "930",
+    "full_name": "TOM500",
+    "abbreviation": "TOM500",
+    "description": "Multi-organ orbital structure segmentation from T2-weighted MRI scans of thyroid eye disease patients",
+    "dataset_id": 930,
+    "configuration": "3d_fullres",
+    "task_type": "segmentation",
+    "modality": "MRI",
+    "image_dimension": "3D",
+    "anatomical_region": "eye",
+    "target_structure": "optic nerve, orbital fat, lacrimal gland, eyeball, and five extraocular muscles (superior rectus complex, inferior rectus, medial rectus, lateral rectus, superior oblique)",
+    "labels": {
+      "background": 0,
+      "Label_1": 1,
+      "Label_2": 2,
+      "Label_3": 3,
+      "Label_4": 4,
+      "Label_5": 5,
+      "Label_6": 6,
+      "Label_7": 7,
+      "Label_8": 8,
+      "Label_9": 9
+    },
+    "num_classes": 10,
+    "num_samples": 500,
+    "num_images": 500,
+    "patch_size": [
+      14,
+      384,
+      320
+    ],
+    "spacing": [
+      3.8499996662139893,
+      0.3125,
+      0.3125
+    ],
+    "median_spacing": [3.8499999046325684, 0.3125, 0.3125],
+    "file_format": ".nii.gz",
+    "acquisition_info": "3.0T MRI system (Ingenia, Philips Medical Systems) with 32-channel head coil; coronal T2-weighted Turbo Spin-Echo (T2-DRIVE) imaging: TR/TE 3000/90 ms, slice thickness 3.5 mm, spacing 3.85 mm, pixel spacing 0.3125×0.3125 mm, acquisition matrix 320×242",
+    "annotation_info": "Manual segmentation by three junior orbital radiologists using ITK-SNAP, fused using STAPLE algorithm, and reviewed/validated by an expert orbital radiologist",
+    "data_source": "Single institution (Shanghai Ninth People's Hospital) clinical data from 500 TED patients collected between June 2016 and January 2021",
+    "detailed_description": "The TOM500 dataset is a multi-organ annotated orbital MRI dataset specifically for thyroid eye disease (TED). It contains T2-weighted MRI scans from 500 TED patients with corresponding manual segmentations of nine orbital structures: optic nerve, orbital fat, lacrimal gland, eyeball, and five extraocular muscles (superior rectus and levator palpebrae superioris complex, inferior rectus, medial rectus, lateral rectus, and superior oblique). All images were acquired on a 3.0T Philips MRI system with coronal T2-DRIVE sequences and have a resolution of 512×512×20 voxels. The annotations were created by three junior radiologists and validated by an expert radiologist using the STAPLE algorithm for consensus.",
+    "clinical_relevance": "Accurate segmentation of orbital structures is essential for quantifying muscle volume changes in thyroid eye disease, which is critical for monitoring disease progression, assessing treatment efficacy (particularly with therapies like Teprotumumab), and guiding clinical management decisions.",
+    "reference": null,
+    "license": null
+  }
+}
