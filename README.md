@@ -1,6 +1,10 @@
-![Camyla](assets/logo.png)
+<p align="center">
+  <img src="assets/logo.png" width="600" alt="Camyla">
+</p>
 
-\[ English | [中文](README_zh.md) \]
+<p align="center">
+  [ English | <a href="README_zh.md">中文</a> ]
+</p>
 
 ### Large-scale, fully autonomous medical image segmentation research — dataset in, paper out.
 
@@ -10,21 +14,31 @@
 
 **Camyla: Scaling Autonomous Research in Medical Image Segmentation**
 
-Yifan Gao¹,², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²,³\*, Xiaosong Wang²,⁴\*
+Yifan Gao¹², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²³\*, Xiaosong Wang²⁴\*
 
 <sup>¹ USTC · ² Shanghai Innovation Institute · ³ SJTU · ⁴ Shanghai AI Lab · \* Corresponding authors</sup>
 
 📑 **[Read the paper (PDF)](assets/camyla.pdf)**  (arXiv link coming soon)
 
-![Camyla hero](assets/hero.png)
+<p align="center">
+  <img src="assets/hero.png" width="760" alt="Camyla hero">
+</p>
 
-**Headline results** (28 days, 8-GPU cluster, **zero human intervention**):
+**Headline results** (28 days, **zero human intervention**):
 
-- **2,700+** novel model implementations generated across two runs
 - **40** complete manuscripts written end-to-end
+- **Cost-efficient**: only **$20–30 per paper** in LLM API spend
 - **Beats the strongest per-dataset baseline** (chosen from 14 established architectures including nnU-Net) on **24 of 31** datasets under identical training budgets
 - **CamylaBench**: contamination-free benchmark of 31 datasets, built exclusively from 2025 publications
-- Senior human reviewers rate the generated manuscripts at the **T1/T2 boundary** of contemporary medical imaging journals
+
+**Manuscript quality.** Senior human reviewers map each generated manuscript to the journal tier it would plausibly fit, using IEEE TMI and Medical Image Analysis as the T1 anchor and JCR Q1 medical imaging journals as the T2 band:
+
+| Tier | Journals | Papers | Representative venues |
+|------|:-------:|:------:|-----------------------|
+| **T1** (top-tier) | 2 | 10 | IEEE Transactions on Medical Imaging; Medical Image Analysis |
+| **T2** (JCR Q1) | 7 | 35 | IEEE Journal of Biomedical and Health Informatics; Artificial Intelligence in Medicine; et al. |
+| **T3** | 9 | 45 | International Journal of Computer Assisted Radiology and Surgery; Biomedical Physics & Engineering Express; et al. |
+| **Total** | 18 | 90 | |
 
 ---
 
@@ -155,7 +169,9 @@ Common flags:
 
 ## How it works
 
-![Camyla system overview](assets/camyla-overview.png)
+<p align="center">
+  <img src="assets/camyla-overview.png" width="820" alt="Camyla system overview">
+</p>
 
 - **Phase 1-3 (idea generation).** Searches 1-4 literature sources, extracts open
   research challenges, and generates multiple proposals scored by an assessment LLM.

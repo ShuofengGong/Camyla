@@ -1,6 +1,10 @@
-![Camyla](assets/logo.png)
+<p align="center">
+  <img src="assets/logo.png" width="600" alt="Camyla">
+</p>
 
-\[ [English](README.md) | 中文 \]
+<p align="center">
+  [ <a href="README.md">English</a> | 中文 ]
+</p>
 
 ### 面向医学图像分割的大规模、全自动科研系统 —— 输入数据集，输出论文。
 
@@ -10,21 +14,31 @@
 
 **Camyla: Scaling Autonomous Research in Medical Image Segmentation**
 
-Yifan Gao¹,², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²,³\*, Xiaosong Wang²,⁴\*
+Yifan Gao¹², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²³\*, Xiaosong Wang²⁴\*
 
 <sup>¹ 中国科学技术大学 · ² 上海创智学院 · ³ 上海交通大学 · ⁴ 上海人工智能实验室 · \* 通讯作者</sup>
 
 📑 **[阅读论文 (PDF)](assets/camyla.pdf)**  （arXiv 链接即将放出）
 
-![Camyla hero](assets/hero.png)
+<p align="center">
+  <img src="assets/hero.png" width="760" alt="Camyla hero">
+</p>
 
-**核心实验结果**（28 天，8 卡 GPU 集群，**全程零人工干预**）：
+**核心实验结果**（28 天，**全程零人工干预**）：
 
-- 两次独立运行共生成 **2,700+** 个新模型实现
 - 端到端产出 **40** 篇完整论文手稿
+- **成本极低**：每篇论文在 LLM API 上的花费仅 **$20–30**
 - 在 **31 个数据集中的 24 个** 上，在相同训练预算下**超越了 14 种主流架构（含 nnU-Net）中最强的逐数据集基线**
 - **CamylaBench**：基于 2025 年新发表数据构建的无污染基准，共 31 个数据集
-- 资深人类审稿人评估结果显示，生成手稿水平落在当代医学影像期刊的 **T1/T2 档位边界**
+
+**手稿质量评估**：资深人类审稿人将每篇生成手稿对应到可能适配的期刊档位。其中 T1（顶级期刊）以 IEEE TMI 和 Medical Image Analysis 为锚，T2（JCR Q1 期刊）为中科院 / JCR 一区的医学影像期刊：
+
+| 档位 | 期刊数 | 论文数 | 代表期刊 |
+|------|:-----:|:-----:|---------|
+| **T1**（顶级期刊） | 2 | 10 | IEEE Transactions on Medical Imaging; Medical Image Analysis |
+| **T2**（JCR Q1） | 7 | 35 | IEEE Journal of Biomedical and Health Informatics; Artificial Intelligence in Medicine 等 |
+| **T3** | 9 | 45 | International Journal of Computer Assisted Radiology and Surgery; Biomedical Physics & Engineering Express 等 |
+| **合计** | 18 | 90 | |
 
 ---
 
@@ -142,7 +156,9 @@ experiments/2026-04-12_liver_segmentation_attempt_0/
 
 ## 工作原理
 
-![Camyla system overview](assets/camyla-overview.png)
+<p align="center">
+  <img src="assets/camyla-overview.png" width="820" alt="Camyla system overview">
+</p>
 
 - **Phase 1-3（idea 生成）**：检索 1-4 个文献源，抽取开放研究 challenge，生成多份 proposal 并由评估 LLM 打分。
 - **Stage 1-3（实验）**：QWBE 在代码变体树上展开搜索。在 Stage 2 下通过列出多个 `experiment.code.candidates` 可启用 **N 路模型竞赛**。
