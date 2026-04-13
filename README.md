@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="600" alt="Camyla">
+  <img src="assets/logo.png" width="420" alt="Camyla">
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@ Yifan Gao¹², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²³\*, Xiaoso
 - **CamylaBench**: contamination-free benchmark of 31 datasets, built exclusively from 2025 publications
 - **Stronger long-horizon orchestration on the experiment stage.** During experiment execution, driven by cost-efficient backends (**GLM-4.7** + **MiniMax-M2.5**), Camyla outperforms **AI Scientist**, **autoresearch Claude Code (Opus 4.6)**, and **autoresearch Codex (GPT-5.4-xhigh)** on execution success, completion rate, and fidelity to the original proposal
 
-**Manuscript quality.** Senior human reviewers map each generated manuscript to the journal tier it would plausibly fit, using IEEE TMI and Medical Image Analysis as the T1 anchor and JCR Q1 medical imaging journals as the T2 band:
+**Manuscript quality — double-blind evaluation.** Camyla-generated manuscripts were mixed with real 2025 publications and judged without reviewers knowing which was AI-written. Four independent panels — **5 senior reviewers**, **10 junior reviewers**, **5 different AI models**, and the **Stanford Agentic Reviewer** — all place Camyla's output between the T1 and T2 tier of contemporary medical-imaging journals. The T1 anchor is IEEE TMI / Medical Image Analysis; the T2 band is JCR Q1 medical-imaging journals:
 
 | Tier | Journals | Papers | Representative venues |
 |------|:-------:|:------:|-----------------------|

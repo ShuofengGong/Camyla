@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="600" alt="Camyla">
+  <img src="assets/logo.png" width="420" alt="Camyla">
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@ Yifan Gao¹², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²³\*, Xiaoso
 - **CamylaBench**：基于 2025 年新发表数据构建的无污染基准，共 31 个数据集
 - **实验阶段更强的 long-horizon 编排**：在实验执行阶段，使用低成本后端（**GLM-4.7** + **MiniMax-M2.5**）的 Camyla 在执行成功率、任务完成率以及对初始 proposal 的一致性（不偏移）上，均超过 **AI Scientist**、基于 **Claude Code (Opus 4.6)** 的 autoresearch、以及基于 **Codex (GPT-5.4-xhigh)** 的 autoresearch
 
-**手稿质量评估**：资深人类审稿人将每篇生成手稿对应到可能适配的期刊档位。其中 T1（顶级期刊）以 IEEE TMI 和 Medical Image Analysis 为锚，T2（JCR Q1 期刊）为中科院 / JCR 一区的医学影像期刊：
+**手稿质量评估（双盲对比）**：将 Camyla 生成的手稿与 2025 年真实发表的论文混合后进行**双盲**评审——审稿人不知道哪一篇是 AI 生成的。四组独立评审（**5 位资深审稿人**、**10 位初级审稿人**、**5 个不同型号的 AI 模型**、以及 **Stanford Agentic Reviewer**）一致认为 Camyla 生成手稿的质量落在医学影像期刊的 **T1–T2 之间**。其中 T1（顶级期刊）以 IEEE TMI 和 Medical Image Analysis 为锚，T2（JCR Q1 期刊）为中科院 / JCR 一区的医学影像期刊：
 
 | 档位 | 期刊数 | 论文数 | 代表期刊 |
 |------|:-----:|:-----:|---------|
