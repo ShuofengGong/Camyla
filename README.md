@@ -6,13 +6,13 @@
   [ English | <a href="README_zh.md">中文</a> ]
 </p>
 
-### Large-scale, fully autonomous medical image segmentation research — dataset in, paper out.
+## Large-scale, fully autonomous medical image segmentation research — dataset in, paper out.
 
 ---
 
 ## 📄 Paper
 
-**Camyla: Scaling Autonomous Research in Medical Image Segmentation**
+### Camyla: Scaling Autonomous Research in Medical Image Segmentation
 
 Yifan Gao¹², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²³\*, Xiaosong Wang²⁴\*
 
@@ -30,6 +30,7 @@ Yifan Gao¹², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²³\*, Xiaoso
 - **Cost-efficient**: only **$20–30 per paper** in LLM API spend
 - **Beats the strongest per-dataset baseline** (chosen from 14 established architectures including nnU-Net) on **24 of 31** datasets under identical training budgets
 - **CamylaBench**: contamination-free benchmark of 31 datasets, built exclusively from 2025 publications
+- **Stronger long-horizon orchestration on the experiment stage.** During experiment execution, driven by cost-efficient backends (**GLM-4.7** + **MiniMax-M2.5**), Camyla outperforms **AI Scientist**, **autoresearch Claude Code (Opus 4.6)**, and **autoresearch Codex (GPT-5.4-xhigh)** on execution success, completion rate, and fidelity to the original proposal
 
 **Manuscript quality.** Senior human reviewers map each generated manuscript to the journal tier it would plausibly fit, using IEEE TMI and Medical Image Analysis as the T1 anchor and JCR Q1 medical imaging journals as the T2 band:
 
@@ -362,6 +363,15 @@ If you find this project useful in academic work, please cite:
   url     = {https://github.com/yifangao112/Camyla}
 }
 ```
+
+---
+
+## Acknowledgements
+
+Camyla builds on ideas and code from two upstream projects:
+
+- [**AI Scientist** (Sakana AI)](https://github.com/SakanaAI/AI-Scientist) — pioneered the autonomous research-agent paradigm that inspired Camyla's overall pipeline design.
+- [**nnU-Net**](https://github.com/MIC-DKFZ/nnUNet) — the self-configuring segmentation framework that Camyla's baseline stage (via [CamylaNet](https://github.com/yifangao112/CamylaNet)) is built on.
 
 ---
 

@@ -6,13 +6,13 @@
   [ <a href="README.md">English</a> | 中文 ]
 </p>
 
-### 面向医学图像分割的大规模、全自动科研系统 —— 输入数据集，输出论文。
+## 面向医学图像分割的大规模、全自动科研系统 —— 输入数据集，输出论文。
 
 ---
 
 ## 📄 论文
 
-**Camyla: Scaling Autonomous Research in Medical Image Segmentation**
+### Camyla: Scaling Autonomous Research in Medical Image Segmentation
 
 Yifan Gao¹², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²³\*, Xiaosong Wang²⁴\*
 
@@ -30,6 +30,7 @@ Yifan Gao¹², Haoyue Li¹, Feng Yuan¹, Xin Gao¹\*, Weiran Huang²³\*, Xiaoso
 - **成本极低**：每篇论文在 LLM API 上的花费仅 **$20–30**
 - 在 **31 个数据集中的 24 个** 上，在相同训练预算下**超越了 14 种主流架构（含 nnU-Net）中最强的逐数据集基线**
 - **CamylaBench**：基于 2025 年新发表数据构建的无污染基准，共 31 个数据集
+- **实验阶段更强的 long-horizon 编排**：在实验执行阶段，使用低成本后端（**GLM-4.7** + **MiniMax-M2.5**）的 Camyla 在执行成功率、任务完成率以及对初始 proposal 的一致性（不偏移）上，均超过 **AI Scientist**、基于 **Claude Code (Opus 4.6)** 的 autoresearch、以及基于 **Codex (GPT-5.4-xhigh)** 的 autoresearch
 
 **手稿质量评估**：资深人类审稿人将每篇生成手稿对应到可能适配的期刊档位。其中 T1（顶级期刊）以 IEEE TMI 和 Medical Image Analysis 为锚，T2（JCR Q1 期刊）为中科院 / JCR 一区的医学影像期刊：
 
@@ -336,6 +337,15 @@ camyla/
   url     = {https://github.com/yifangao112/Camyla}
 }
 ```
+
+---
+
+## 致谢
+
+Camyla 借鉴了两个上游项目的思路和部分代码：
+
+- [**AI Scientist** (Sakana AI)](https://github.com/SakanaAI/AI-Scientist) —— 开创了自动科研 agent 的范式，启发了 Camyla 的整体流水线设计。
+- [**nnU-Net**](https://github.com/MIC-DKFZ/nnUNet) —— Camyla 的 baseline 阶段（通过 [CamylaNet](https://github.com/yifangao112/CamylaNet)）构建于其上的自配置分割框架。
 
 ---
 
