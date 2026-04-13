@@ -355,12 +355,14 @@ camyla/
 
 If you find this project useful in academic work, please cite:
 
-```
-@software{camyla_2026,
-  author  = {Yifan Gao},
-  title   = {Camyla: An AI Scientist for Medical Image Segmentation},
-  year    = {2026},
-  url     = {https://github.com/yifangao112/Camyla}
+```bibtex
+@misc{gao2026camyla,
+  title         = {Camyla: Scaling Autonomous Research in Medical Image Segmentation},
+  author        = {Gao, Yifan and Li, Haoyue and Yuan, Feng and Gao, Xin and Huang, Weiran and Wang, Xiaosong},
+  year          = {2026},
+  eprint        = {XXXX.XXXXX},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI}
 }
 ```
 
