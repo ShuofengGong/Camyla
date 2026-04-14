@@ -67,6 +67,27 @@ It combines:
 
 ---
 
+## 📚 Sample generated papers
+
+A 10-paper subset of the manuscripts Camyla produced end-to-end — no hand-editing,
+LaTeX compiled as-is by the pipeline. Each PDF lives under
+[`assets/paper_pdf/`](assets/paper_pdf/).
+
+| # | Title | Modality / task |
+|:-:|-------|-----------------|
+| 1 | [Cross-Directional Feature Lattice for Brain Tumor Segmentation](assets/paper_pdf/01.pdf) | MRI · brain tumor |
+| 2 | [Scale-Frequency Adaptive Fusion for Multiple Sclerosis Lesion Segmentation](assets/paper_pdf/02.pdf) | MRI · MS lesions |
+| 3 | [Hierarchical Context Gating for Neonatal Brain Lesion Segmentation](assets/paper_pdf/03.pdf) | MRI · neonatal HIE |
+| 4 | [Cross-Scale Mutual Refinement for Bronchoalveolar Lavage Fluid Cell Segmentation](assets/paper_pdf/04.pdf) | Microscopy · BALF cells |
+| 5 | [Symmetry-Aware Cascaded Attention for Panoramic Tooth Segmentation](assets/paper_pdf/05.pdf) | Dental X-ray · tooth |
+| 6 | [Specular-Residual Decoupled Encoding for Surgical Scene Segmentation](assets/paper_pdf/06.pdf) | Laparoscopy · surgical scene |
+| 7 | [Adaptive Scale-Aware Feature Integration for Liver Lesion Segmentation](assets/paper_pdf/07.pdf) | CT · liver lesion |
+| 8 | [Boundary-Hierarchical Decomposition for Fetal Brain Tissue Segmentation](assets/paper_pdf/08.pdf) | MRI · fetal brain |
+| 9 | [Vessel-Guided Boundary Residual Networks for Dermatological Vessel Segmentation](assets/paper_pdf/09.pdf) | OCTA · dermatological vessel |
+| 10 | [Hierarchical Resolution-Retentive Feature Encoding for Brain Metastasis Segmentation](assets/paper_pdf/10.pdf) | MRI · brain metastasis |
+
+---
+
 ## Quick start
 
 ### 1. Install
@@ -337,27 +358,6 @@ camyla/
 - [nnPrep](https://github.com/yifangao112/nnPrep) — LLM agent that converts
   arbitrary medical segmentation datasets into the nnU-Net v2 format consumed
   by CamylaNet (and therefore by Camyla).
-
----
-
-## 📚 Sample generated papers
-
-A 10-paper subset of the manuscripts Camyla produced end-to-end — no hand-editing,
-LaTeX compiled as-is by the pipeline. Each PDF lives under
-[`assets/paper_pdf/`](assets/paper_pdf/).
-
-| # | Title | Modality / task |
-|:-:|-------|-----------------|
-| 1 | [Cross-Directional Feature Lattice for Brain Tumor Segmentation](assets/paper_pdf/01.pdf) | MRI · brain tumor |
-| 2 | [Scale-Frequency Adaptive Fusion for Multiple Sclerosis Lesion Segmentation](assets/paper_pdf/02.pdf) | MRI · MS lesions |
-| 3 | [Hierarchical Context Gating for Neonatal Brain Lesion Segmentation](assets/paper_pdf/03.pdf) | MRI · neonatal HIE |
-| 4 | [Cross-Scale Mutual Refinement for Bronchoalveolar Lavage Fluid Cell Segmentation](assets/paper_pdf/04.pdf) | Microscopy · BALF cells |
-| 5 | [Symmetry-Aware Cascaded Attention for Panoramic Tooth Segmentation](assets/paper_pdf/05.pdf) | Dental X-ray · tooth |
-| 6 | [Specular-Residual Decoupled Encoding for Surgical Scene Segmentation](assets/paper_pdf/06.pdf) | Laparoscopy · surgical scene |
-| 7 | [Adaptive Scale-Aware Feature Integration for Liver Lesion Segmentation](assets/paper_pdf/07.pdf) | CT · liver lesion |
-| 8 | [Boundary-Hierarchical Decomposition for Fetal Brain Tissue Segmentation](assets/paper_pdf/08.pdf) | MRI · fetal brain |
-| 9 | [Vessel-Guided Boundary Residual Networks for Dermatological Vessel Segmentation](assets/paper_pdf/09.pdf) | OCTA · dermatological vessel |
-| 10 | [Hierarchical Resolution-Retentive Feature Encoding for Brain Metastasis Segmentation](assets/paper_pdf/10.pdf) | MRI · brain metastasis |
 
 ---
 
