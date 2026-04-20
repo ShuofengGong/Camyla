@@ -15,6 +15,7 @@ def _pre_set_config_env():
     os.environ.setdefault("QWBE_CONFIG_PATH", os.path.abspath("config.yaml"))
 _pre_set_config_env()
 
+
 import os.path as osp
 import json
 import argparse
